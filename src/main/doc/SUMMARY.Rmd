@@ -3,13 +3,13 @@
 * [OWS Context](section1/ows-context.md)
 
 ```{r warning=FALSE, error=FALSE, message=FALSE}
+print("hello!")
+#read all repos private=false
 
-read all repos private=false
-
-for all sections in .config.json
-  # echo section name
-  foa all repos with section=section name
-    cat("[<repo name>]" (section1/<repo name>.md)
+#for all sections in .config.json
+#  # echo section name
+#  foa all repos with section=section name
+#    cat("[<repo name>]" (section1/<repo name>.md)
 
 ```
 * [ElasticCas](section1/elasticCas.md)
