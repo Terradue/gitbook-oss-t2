@@ -1,0 +1,4 @@
+```{r results='asis', echo=FALSE}
+suppressMessages(library("RCurl"))
+cat(getURL("https://raw.githubusercontent.com/Terradue/ows-context-demo/master/README.md"))
+```
