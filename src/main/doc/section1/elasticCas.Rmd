@@ -1,5 +1,0 @@
-* I'm ElasticCas
-
-```{r}
-cat("## hi!")
-```
