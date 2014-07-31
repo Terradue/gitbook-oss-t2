@@ -1,15 +1,12 @@
 # Summary
 
-
 * [OWS Context](section1/ows-context.md)
-
-```{r}
-cat(" *[OWS Context demo](section1/README.md)")
+```{r results='asis', echo=FALSE}
+cat(" * [OWS Context demo](section1/README.md)")
 #read all repos private=false
 #for all sections in .config.json
 #  # echo section name
 #  foa all repos with section=section name
 #    cat("[<repo name>]" (section1/<repo name>.md)
 ```
-
 * [ElasticCas](section1/elasticCas.md)
