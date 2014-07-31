@@ -2,7 +2,7 @@
 
 * [OWS Context](section1/ows-context.md)
 ```{r results='asis', echo=FALSE}
-cat(" * [OWS Context demo](section1/ows-context-demo.md)")
+cat(" * [OWS Context demo](section1/ows-context-demo.md)\n")
 cat(" * [OWS Context Java library](section1/ows-context4j.md)")
 ```
 * [ElasticCas](section2/elasticCas.md)
