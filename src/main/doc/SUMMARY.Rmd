@@ -1,5 +1,7 @@
 # Summary
 
+* [OWS Context](section1/ows-context.md)
+
 ```{r warning=FALSE, error=FALSE, message=FALSE}
 
 read all repos private=false
@@ -10,3 +12,4 @@ for all sections in .config.json
     cat("[<repo name>]" (section1/<repo name>.md)
 
 ```
+* [ElasticCas](section1/elasticCas.md)
