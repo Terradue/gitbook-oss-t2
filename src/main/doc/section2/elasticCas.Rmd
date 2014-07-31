@@ -1,5 +1,5 @@
 * I'm ElasticCas
 
-```{r}
+```{r results='asis', echo=FALSE}
 cat("## hi!")
 ```
