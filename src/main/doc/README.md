@@ -1,4 +1,4 @@
-# Terradue's guide to its OpenSource projetcs 
+# Terradue's guide to its OpenSource projects 
 #### Terradue
 
 ## Welcome !
