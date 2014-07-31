@@ -2,4 +2,11 @@
 
 ```{r warning=FALSE, error=FALSE, message=FALSE}
 
+read all repos private=false
+
+for all sections in .config.json
+  # echo section name
+  foa all repos with section=section name
+    cat("[<repo name>]" (section1/<repo name>.md)
+
 ```
