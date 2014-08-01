@@ -1,3 +1,10 @@
+---
+title: "T2gitbook"
+author: "Costanzo D'Angelis"
+date: "August 1, 2014"
+output: html_document
+---
+
 # Summary
 
 ```{r}
@@ -6,30 +13,95 @@ opts_chunk$set(cache=FALSE, autodep=TRUE)
 ```
 
 ```{r results='asis', echo=FALSE}
+suppressMessages(library("rjson"))
+suppressMessages(library("RCurl"))     
 
-# loop
 section <- "section"
 
 dir.create(section)
 
-cat("* [OWS Context](chapter/OWS-Context.md)\n")
+#config.json <- fromJSON(getURLContent("https://raw.githubusercontent.com/fabricebrito/gitbook-oss-t2/master/src/main/doc/.config.json", ssl.verifypeer = FALSE, useragent = "R"))
 
-repo <- "ows-context-demo"
+config.json <- fromJSON(file=".config.json")
 
+sectionClass <- c()
+for(i in 1:length(config.json))
+     sectionClass <- append(sectionClass, config.json[i]$section$title)
+
+
+repos.json<-fromJSON(getURLContent("https://api.github.com/orgs/terradue/repos?per_page=1000", ssl.verifypeer = FALSE, useragent = "R"))
+
+projectName <- c()
+description <- c()
+lastTimeUpdate <- c()
+creationTimeDate <- c()
+programmingLanguage <- c()
+projectFullName <- c()
+section <- c()
+# salvo i dati della lista relativa ai progetti
+for(i in 1:length(repos.json))
+{
+     repo<-repos.json[[i]]
+     if(repo$private==FALSE)
+     {
+          gitBook.filepath <- paste("https://raw.githubusercontent.com", repo$full_name, "master/.gitbook",sep="/")
+          #print(gitBook.filepath)
+          # build the .gitbook file path for each repository
+          # to do: how to hide the error message?
+          result <- try(section.json <-fromJSON(getURLContent(gitBook.filepath, ssl.verifypeer = FALSE, useragent = "R")));
+               if(class(result) == "try-error") 
+                    next;
+          
+	  
+          
+          # a repo can be part of more then one section
+          for(j in 1:length(section.json))
+          {
+               projectName <- append(projectName, repo$name)
+               projectFullName <- append(projectFullName, repo$full_name)
+               description <- append(description, repo$description)
+               lastTimeUpdate <- append(lastTimeUpdate, repo$updated_at)
+               creationTimeDate <- append(creationTimeDate, repo$created_at)
+               programmingLanguage <- append(programmingLanguage, ifelse(length(repo$language)>0,repo$language,"")) 
+               section <- append(section, section.json[[j]])  
+          }
+     }
+}
+
+
+repo.frame <- data.frame(ProjectName=projectName, Description=description, ProgrammingLanguage=programmingLanguage,
+                   LastTimeUpdate=lastTimeUpdate, CreationTimeDate=creationTimeDate, Section=section,
+                   ProjectFullName=projectFullName, stringsAsFactors = FALSE)
+
+# build the page with reference link 
 template <- "template/repo.Rmd"
 
-fileConn<-file(paste0("section/", repo, ".Rmd"))
+for(i in sectionClass)
+{
+     section.frame <- repo.frame[repo.frame$Section==i, ]
+     section.frame <- section.frame[order(section.frame$ProjectName), ]
+      
+     cat(paste0("* [", i, "](chapter/", gsub(" ", "-", i), ".md)\n"))
+     for(j in seq(nrow(section.frame)))
+     {
+      	  repo <- section.frame[j, ]$ProjectName 
+	  repo.declaration <- paste0("repo <- '", repo, "'")
+	  language.declaration <- paste0("language <- '", section.frame[j, ]$ProgrammingLanguage, "'")	
+	       
+          cat(paste0(" * [", repo, "](section/", repo, ".md)\n"))
+          
+          fileConn <- file(paste0("section/", repo, ".Rmd"))   
+          
+          content <- c("```{r results='asis', echo=FALSE}",
+            "opts_chunk$set(cache=FALSE, autodep=TRUE)",
+            repo.declaration,
+	    language.declaration, 
+            "```",
+            readChar(template, file.info(template)$size)) 
 
-content <- c("```{r results='asis', echo=FALSE}",
-	"opts_chunk$set(cache=FALSE, autodep=TRUE)",
-	"repo <- 'ows-context-demo'",
-	"```",
- 	readChar(template, file.info(template)$size)) 
-
-writeLines(content, fileConn)
-close(fileConn)
-
-cat(" * [OWS Context demo](section/ows-context-demo.md)\n")
-cat(" * [OWS Context Java library](section/ows-context4j.md)")
+          writeLines(content, fileConn)
+          close(fileConn)     
+     }
+}
 ```
-* [ElasticCas](chapter/ElasticCAS.md)
+
