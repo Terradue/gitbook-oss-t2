@@ -1,5 +1,0 @@
-* I'm ElasticCas
-
-```{r results='asis', echo=FALSE}
-cat("## hi!")
-```
