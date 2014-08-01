@@ -1,3 +1,0 @@
-* I'm ElasticCas
-
-## hi!
