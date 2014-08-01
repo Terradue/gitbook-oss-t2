@@ -8,9 +8,11 @@ opts_chunk$set(cache=FALSE, autodep=TRUE)
 ```{r results='asis', echo=FALSE}
 
 # loop
-section <- "section1"
+section <- "section"
 
-cat("* [OWS Context](chapter/ows-context.md)\n")
+dir.create(section)
+
+cat("* [OWS Context](chapter/OWS-Context.md)\n")
 
 repo <- "ows-context-demo"
 
@@ -28,6 +30,6 @@ writeLines(content, fileConn)
 close(fileConn)
 
 cat(" * [OWS Context demo](section/ows-context-demo.md)\n")
-cat(" * [OWS Context Java library](section1/ows-context4j.md)")
+cat(" * [OWS Context Java library](section/ows-context4j.md)")
 ```
-* [ElasticCas](chapter/elasticCas.md)
+* [ElasticCas](chapter/ElasticCAS.md)
