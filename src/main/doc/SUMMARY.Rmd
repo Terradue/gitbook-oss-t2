@@ -11,9 +11,11 @@ repo <- "ows-context-demo"
 fileConn<-file(paste0("section1/", repo, ".Rmd"))
 
 content <- c("```{r results='asis', echo=FALSE}", 
-        "suppressMessages(library('RCurl'))", 
-        "cat(getURL(paste0("https://raw.githubusercontent.com/Terradue/", repo, "/master/README.md")))
-```
+        "suppressMessages(library('RCurl'))",
+	"repo <- 'ows-context-demo'",
+        "cat(getURL(paste0('https://raw.githubusercontent.com/Terradue/', repo, '/master/README.md')))", 
+	"```")
+
 writeLines(content, fileConn)
 close(fileConn)
 
