@@ -12,7 +12,7 @@ section <- "section"
 
 dir.create(section)
 
-cat("* [OWS Context](chapter/ows-context.md)\n")
+cat("* [OWS Context](chapter/OWS-Context.md)\n")
 
 repo <- "ows-context-demo"
 
@@ -32,4 +32,4 @@ close(fileConn)
 cat(" * [OWS Context demo](section/ows-context-demo.md)\n")
 cat(" * [OWS Context Java library](section/ows-context4j.md)")
 ```
-* [ElasticCas](chapter/elasticCas.md)
+* [ElasticCas](chapter/ElasticCAS.md)
