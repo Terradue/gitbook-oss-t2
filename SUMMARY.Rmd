@@ -45,13 +45,14 @@ for(i in 1:length(repos.json))
      if(repo$private==FALSE)
      {
           gitBook.filepath <- paste("https://raw.githubusercontent.com", repo$full_name, "master/.gitbook",sep="/")
-          print(gitBook.filepath)
+          #print(gitBook.filepath)
           # build the .gitbook file path for each repository
           # to do: how to hide the error message?
           result <- try(section.json <-fromJSON(getURLContent(gitBook.filepath, ssl.verifypeer = FALSE, useragent = "R")));
                if(class(result) == "try-error") 
                     next;
           
+	  
           
           # a repo can be part of more then one section
           for(j in 1:length(section.json))
