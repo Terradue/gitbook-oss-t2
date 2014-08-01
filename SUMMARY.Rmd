@@ -16,6 +16,10 @@ opts_chunk$set(cache=FALSE, autodep=TRUE)
 library("rjson")
 library("RCurl")     
 
+section <- "section"
+
+dir.create(section)
+
 config.json <- fromJSON(getURLContent("https://raw.githubusercontent.com/fabricebrito/gitbook-oss-t2/master/src/main/doc/.config.json", ssl.verifypeer = FALSE, useragent = "R"))
 
 sectionClass <- c()
