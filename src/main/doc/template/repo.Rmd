@@ -1,4 +1,4 @@
-```{r results='asis', echo=FALSE}
+```{r results='asis', echo=FALSE, autodep=TRUE}
 suppressMessages(library("RCurl"))
 cat(getURL(paste("https://raw.githubusercontent.com/Terradue/", repo, "/master/README.md")))
 ```
