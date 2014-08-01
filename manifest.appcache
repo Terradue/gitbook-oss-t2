@@ -1,14 +1,11 @@
 CACHE MANIFEST
-# Revision 1406904453650
+# Revision 1406904583554
 
 CACHE:
 index.html
 chapter/ElasticCAS.html
 chapter/OWS-Context.html
 chapter/OpenNebula.html
-section/DotNetEarthObservation.html
-section/ows-context-demo.html
-section/ows-context4j.html
 gitbook/app.js
 gitbook/fonts/fontawesome/FontAwesome.otf
 gitbook/fonts/fontawesome/fontawesome-webfont.eot
