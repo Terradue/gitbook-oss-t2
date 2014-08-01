@@ -10,13 +10,13 @@ opts_chunk$set(cache=FALSE, autodep=TRUE)
 # loop
 section <- "section1"
 
-cat("* [OWS Context](section1/ows-context.md)\n")
+cat("* [OWS Context](chapter/ows-context.md)\n")
 
 repo <- "ows-context-demo"
 
 template <- "template/repo.Rmd"
 
-fileConn<-file(paste0("section1/", repo, ".Rmd"))
+fileConn<-file(paste0("section/", repo, ".Rmd"))
 
 content <- c("```{r results='asis', echo=FALSE}",
 	"opts_chunk$set(cache=FALSE, autodep=TRUE)",
@@ -27,7 +27,7 @@ content <- c("```{r results='asis', echo=FALSE}",
 writeLines(content, fileConn)
 close(fileConn)
 
-cat(" * [OWS Context demo](section1/ows-context-demo.md)\n")
+cat(" * [OWS Context demo](section/ows-context-demo.md)\n")
 cat(" * [OWS Context Java library](section1/ows-context4j.md)")
 ```
-* [ElasticCas](section2/elasticCas.md)
+* [ElasticCas](chapter/elasticCas.md)
