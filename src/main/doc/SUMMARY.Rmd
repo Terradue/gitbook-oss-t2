@@ -25,7 +25,7 @@ template <- "template/repo.Rmd"
 fileConn<-file(paste0("section1/", repo, ".Rmd"))
 
 content <- c("```{r results='asis', echo=FALSE}",
-	"opts_chunk$set(cache=TRUE, autodep=TRUE)",
+	"opts_chunk$set(cache=FALSE, autodep=TRUE)",
 	"repo <- 'ows-context-demo'",
 	"```",
  	readChar(template, file.info(template)$size)) 
