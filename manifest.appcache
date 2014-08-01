@@ -1,12 +1,12 @@
 CACHE MANIFEST
-# Revision 1406885298192
+# Revision 1406896373403
 
 CACHE:
 index.html
+elasticCas.html
 section1/ows-context-demo.html
 section1/ows-context.html
 section1/ows-context4j.html
-section2/elasticCas.html
 gitbook/app.js
 gitbook/fonts/fontawesome/FontAwesome.otf
 gitbook/fonts/fontawesome/fontawesome-webfont.eot

@@ -30,4 +30,4 @@ close(fileConn)
 cat(" * [OWS Context demo](section1/ows-context-demo.md)\n")
 cat(" * [OWS Context Java library](section1/ows-context4j.md)")
 ```
-* [ElasticCas](section2/elasticCas.md)
+* [ElasticCas](elasticCas.md)
