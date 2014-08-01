@@ -15,7 +15,7 @@ content <- c("```{r results='asis', echo=FALSE}",
         "cat(getURL(paste0("https://raw.githubusercontent.com/Terradue/", repo, "/master/README.md")))
 ```
 writeLines(content, fileConn)
-close(fileConn
+close(fileConn)
 
 cat(" * [OWS Context demo](section1/ows-context-demo.md)\n")
 cat(" * [OWS Context Java library](section1/ows-context4j.md)")
