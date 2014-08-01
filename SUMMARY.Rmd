@@ -13,8 +13,8 @@ opts_chunk$set(cache=FALSE, autodep=TRUE)
 ```
 
 ```{r results='asis', echo=FALSE}
-library("rjson")
-library("RCurl")     
+suppressMessages(library("rjson"))
+suppressMessages(library("RCurl"))     
 
 section <- "section"
 
@@ -70,26 +70,21 @@ repo.frame <- data.frame(ProjectName=projectName, Description=description, Progr
                    LastTimeUpdate=lastTimeUpdate, CreationTimeDate=creationTimeDate, Section=section,
                    ProjectFullName=projectFullName, stringsAsFactors = FALSE)
 
-#repo.frame <- repo.frame[order(repo.frame$Section,repo.frame$ProjectName),]
-
-#sectionList <- unlist(unique(repo.frame$Section))
-
 # build the page with reference link 
 template <- "template/repo.Rmd"
+
 for(i in sectionClass)
 {
-     section.frame <- repo.frame[section==i, ]
+     section.frame <- repo.frame[repo.frame$Section==i, ]
      section.frame <- section.frame[order(section.frame$ProjectName), ]
-     
+      
      cat(paste0("* [", i, "](chapter/", gsub(" ", "-", i), ".md)\n"))
-  
-     for(j in nrow(section.frame))
+     for(j in seq(nrow(section.frame)))
      {
-          repo <- gsub(" ", "-", section.frame[j]$ProjectName)
+      	  repo <- section.frame[j, ]$ProjectName 
+	  repo.declaration <- paste0("repo <- '", repo, "'")
        
-          repo.declaration <- paste0("repo <- '", repo, "'")
-       
-          cat(paste0(" * [", i, "](section/", repo, ".md)\n"))
+          cat(paste0(" * [", repo, "](section/", repo, ".md)\n"))
           
           fileConn <- file(paste0("section/", repo, ".Rmd"))   
           
