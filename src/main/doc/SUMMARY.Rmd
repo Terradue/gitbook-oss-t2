@@ -1,6 +1,11 @@
 # Summary
 
-```{r results='asis', echo=FALSE, autodep=TRUE}
+```{r}
+# global chunk options
+opts_chunk$set(cache=TRUE, autodep=TRUE)
+```
+
+```{r results='asis', echo=FALSE}
 
 # loop
 section <- "section1"
@@ -19,7 +24,8 @@ template <- "template/repo.Rmd"
 
 fileConn<-file(paste0("section1/", repo, ".Rmd"))
 
-content <- c("```{r results='asis', echo=FALSE, autodep=TRUE}",
+content <- c("```{r results='asis', echo=FALSE}",
+	"opts_chunk$set(cache=TRUE, autodep=TRUE)",
 	"repo <- 'ows-context-demo'",
 	"```",
  	readChar(template, file.info(template)$size)) 
