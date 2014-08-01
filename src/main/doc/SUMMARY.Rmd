@@ -8,16 +8,25 @@ section <- "section1"
 cat("* [OWS Context](section1/ows-context.md)\n")
 
 repo <- "ows-context-demo"
-fileConn<-file(paste0("section1/", repo, ".Rmd"))
 
-content <- c("```{r results='asis', echo=FALSE}", 
-        "suppressMessages(library('RCurl'))",
-	"repo <- 'ows-context-demo'",
-        "cat(getURL(paste0('https://raw.githubusercontent.com/Terradue/', repo, '/master/README.md')))", 
-	"```")
+template <- "template/repo.Rmd"
+sink(paste0("section1/", repo, ".Rmd"))
+cat("```{r results='asis', echo=FALSE}\n")
+cat(paste0('repo <- "', repo, '"\n'))
+cat('```\n\n')
+cat(readChar(fileName, file.info(fileName)$size))
+sink()
 
-writeLines(content, fileConn)
-close(fileConn)
+#fileConn<-file(paste0("section1/", repo, ".Rmd"))
+
+#content <- c("```{r results='asis', echo=FALSE}", 
+#        "suppressMessages(library('RCurl'))",
+#	"repo <- 'ows-context-demo'",
+ #       "cat(getURL(paste0('https://raw.githubusercontent.com/Terradue/', repo, '/master/README.md')))", 
+#	"```")
+
+#writeLines(content, fileConn)
+#close(fileConn)
 
 cat(" * [OWS Context demo](section1/ows-context-demo.md)\n")
 cat(" * [OWS Context Java library](section1/ows-context4j.md)")
