@@ -20,7 +20,9 @@ section <- "section"
 
 dir.create(section)
 
-config.json <- fromJSON(getURLContent("https://raw.githubusercontent.com/fabricebrito/gitbook-oss-t2/master/src/main/doc/.config.json", ssl.verifypeer = FALSE, useragent = "R"))
+#config.json <- fromJSON(getURLContent("https://raw.githubusercontent.com/fabricebrito/gitbook-oss-t2/master/src/main/doc/.config.json", ssl.verifypeer = FALSE, useragent = "R"))
+
+config.json <- fromJSON(".config.json")
 
 sectionClass <- c()
 for(i in 1:length(config.json))
