@@ -2,7 +2,7 @@
 
 ```{r}
 # global chunk options
-opts_chunk$set(cache=TRUE, autodep=TRUE)
+opts_chunk$set(cache=FALSE, autodep=TRUE)
 ```
 
 ```{r results='asis', echo=FALSE}
@@ -15,12 +15,6 @@ cat("* [OWS Context](section1/ows-context.md)\n")
 repo <- "ows-context-demo"
 
 template <- "template/repo.Rmd"
-#sink(paste0("section1/", repo, ".Rmd"))
-#cat("```{r results='asis', echo=FALSE}\n")
-#cat(paste0('repo <- "', repo, '"\n'))
-#cat('```\n')
-#cat(readChar(template, file.info(template)$size))
-#sink()
 
 fileConn<-file(paste0("section1/", repo, ".Rmd"))
 
@@ -29,11 +23,6 @@ content <- c("```{r results='asis', echo=FALSE}",
 	"repo <- 'ows-context-demo'",
 	"```",
  	readChar(template, file.info(template)$size)) 
-
-#"suppressMessages(library('RCurl'))",
-#	"repo <- 'ows-context-demo'",
-#       "cat(getURL(paste0('https://raw.githubusercontent.com/Terradue/', repo, '/master/README.md')))", 
-#	"```")
 
 writeLines(content, fileConn)
 close(fileConn)
