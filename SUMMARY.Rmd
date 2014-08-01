@@ -85,7 +85,8 @@ for(i in sectionClass)
      {
       	  repo <- section.frame[j, ]$ProjectName 
 	  repo.declaration <- paste0("repo <- '", repo, "'")
-       
+	  language.declaration <- paste0("language <- '", section.frame[j, ]$ProgrammingLanguage, "'")	
+	       
           cat(paste0(" * [", repo, "](section/", repo, ".md)\n"))
           
           fileConn <- file(paste0("section/", repo, ".Rmd"))   
@@ -93,6 +94,7 @@ for(i in sectionClass)
           content <- c("```{r results='asis', echo=FALSE}",
             "opts_chunk$set(cache=FALSE, autodep=TRUE)",
             repo.declaration,
+	    language.declaration, 
             "```",
             readChar(template, file.info(template)$size)) 
 
