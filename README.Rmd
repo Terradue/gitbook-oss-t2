@@ -19,6 +19,13 @@ repo.frame <- GetRepos(github.organization)
 
 This guide gathers `r github.organization`'s Open Source projects.
 
+### Meet the team
+
+```{r
+
+kable(GetPublicMembers(github.organization), row.names = FALSE, format = "html")
+
+```
 ### A few facts
 
 #### Top Starred repositories
