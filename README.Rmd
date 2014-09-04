@@ -21,6 +21,7 @@ blah blah
 ```{r results='asis', echo=FALSE}
 
 repo.frame <- GetRepos(github.organization)
+colnames(repo.frame)
 
 repo.frame$Stars <- as.numeric(repo.frame$Stars)
 
