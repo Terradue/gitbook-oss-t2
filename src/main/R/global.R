@@ -2,7 +2,7 @@
 function GetRepos(organization) {
 
 # get the data from GitHub
-repos.json <- fromJSON(getURLContent(paste0("https://api.github.com/orgs/", github.organization, "/repos?per_page=1000"), ssl.verifypeer = FALSE, useragent = "R"))
+repos.json <- fromJSON(getURLContent(paste0("https://api.github.com/orgs/", organization, "/repos?per_page=1000"), ssl.verifypeer = FALSE, useragent = "R"))
 
 project.name <- c()
 project.fullname <- c()
