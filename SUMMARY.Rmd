@@ -9,9 +9,7 @@ output: html_document
 # load packages
 suppressMessages(library("rjson"))
 suppressMessages(library("RCurl"))  
-```
 
-```{r}
 # global chunk options
 opts_chunk$set(cache=FALSE, autodep=TRUE)
 ```
