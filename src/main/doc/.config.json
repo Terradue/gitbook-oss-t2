@@ -1,17 +1,17 @@
 {
-  "section": {
+  "chapter": {
   "title": "OWS Context"
   },
-  "section": {
+  "chapter": {
   "title": "ElasticCAS"
   },
-  "section": {
+  "chapter": {
   "title": "OpenNebula"
   },
-  "section": {
+  "chapter": {
   "title": "DCS Field Guide"
   },
-  "section": {
+  "chapter": {
   "title": "R packages"
   }
 }
