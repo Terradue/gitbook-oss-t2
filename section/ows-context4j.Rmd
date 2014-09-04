@@ -1,12 +1,12 @@
 ```{r results='asis', echo=FALSE}
 opts_chunk$set(cache=FALSE, autodep=TRUE)
 github.organization <- 'Terradue'
-repo <- 'NA'
-language <- 'NA'
-creation <- 'NA'
-update <- 'NA'
-stars <- ''
-forks <- ''
+repo <- 'ows-context4j'
+language <- 'Java'
+creation <- '2014-07-30T14:11:44Z'
+update <- '2014-07-30T14:18:48Z'
+stars <- '0'
+forks <- '0'
 ```
 ```{r results='asis', echo=FALSE}
 url.organization <- paste0("https://github.com/", github.organization)
