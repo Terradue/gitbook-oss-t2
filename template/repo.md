@@ -1,40 +1,304 @@
-#### Language: Java
-## Java library for OGC OWS Context
 
-### ows4j library
+```
+## Error: object 'language' not found
+```
 
-The **ows4j** library provides the tools to manage OGC OWS Context documents.
+```
+## Error: object 'creation' not found
+```
 
-### OGC OWS Context
+```
+## Error: cannot coerce type 'closure' to vector of type 'character'
+```
 
-The [OGC Web Services Context Document](http://www.opengeospatial.org/standards/owc) (OWS Context) describes the use cases, requirements and conceptual model for the OWS Context encoding standard. 
+Not Found # rLandsat8
 
-The OGC Web Services Context Document allows a set of configured information resources (service set) to be passed between applications primarily as a collection of services and supports in-line content as well (e.g. [Geography Markup Language (GML)](http://www.opengeospatial.org/standards/gml)). 
+R interface to rLandsat8
 
-The goal is to support use cases such as the distribution of search results, the exchange of a set of resources such as OGC [Web Feature Service (WFS)](http://www.opengeospatial.org/standards/wfs), [Web Map Service (WMS)](http://www.opengeospatial.org/standards/wms), [Web Map Tile Service (WMTS)](http://www.opengeospatial.org/standards/wmts), [Web Coverage Service (WCS)](http://www.opengeospatial.org/standards/wcs) and others in a ‘common operating picture’. Additionally OWS Context can deliver a set of configured processing services ([Web Processing Service (WPS)](http://www.opengeospatial.org/standards/wps)) parameters to allow the processing to be reproduced on different nodes. 
+<!---[![DOI](https://zenodo.org/badge/3806/Terradue/rOpenSearch.png)](http://dx.doi.org/10.5281/zenodo.10642)-->
 
-The standard provides a core model, which is extended and encoded as defined in extensions to this standard. A ‘context document’ specifies a fully configured service set which can be exchanged (with a consistent interpretation) among clients supporting the standard. 
+### Documentation
 
-**Find out more about OGC OWS Context:**
+The rLandsat8 documentation is live at: http://terradue.github.io/rLandsat8
 
-* [OGC® OWS Context Conceptual Model](https://portal.opengeospatial.org/files/?artifact_id=55182)
-* [OGC® OWS Context Atom Encoding Standard](https://portal.opengeospatial.org/files/?artifact_id=55183)
-* [OGC® OWS-10 Rules for JSON and GeoJSON Adoption: Focus on OWS-Context](https://portal.opengeospatial.org/files/?artifact_id=57477)
+The rLandsat8 documentation source is available at: https://github.com/Terradue/rLandsat8/tree/master/src/main/doc
 
-**There's an OWS Context demonstration live at [terradue.github.io/ows-context-demo/](http://terradue.github.io/ows-context-demo)**
+Inside R, use ?_<function name>_ to view the function's help page. Example:
 
-### Getting Started
+```coffee
+?ReadLandsat8
+```
 
-The folder https://github.com/Terradue/ows-context4j/tree/master/src/test/java/com/terradue/owc/test contains several tests that represent examples of the owc4j library.
+### Citing this package
 
-### Limitations
+<!---To cite rOpenSearch use its [DOI](http://dx.doi.org/10.5281/zenodo.10642)-->
 
-The library does not provide yet the full coverage of the OGC OWS Context specification. 
+### Installing a release
 
-### Questions, bugs, and suggestions
+The releases are available at: https://github.com/Terradue/rLandsat8/releases
 
-Please file any bugs or questions as [issues](https://github.com/Terradue/ows-context4j/issues/new) 
+Releases can be installed using [devtools](http://www.rstudio.com/products/rpackages/devtools/)
 
-### Want to contribute?
+Start an R session and run:
 
-Fork the repository [here](https://github.com/Terradue/ows-context4j/fork) and send us pull requests.
+```coffee
+library(devtools)
+install_url("https://github.com/Terradue/rLandsat8/releases/download/v0.1-SNAPSHOT/rLandsat8_0.1.0.tar.gz")
+library(rLandsat8)
+```
+
+> Note the example above install the v0.1-SNAPSHOT release, adapt it to the current release
+
+### Building and installing the development version
+
+The rLandsat8 package is built using maven.
+
+From a terminal: 
+
+```bash
+cd
+git clone git@github.com:Terradue/rLandsat8.git
+cd rLandsat8
+mvn compile
+```
+
+That generates a compressed archive with the rOpenSearch package in:
+
+```
+~/rLandsat8/target/R/src/rLandsat8_x.y.z.tar.gz
+```
+To install the package, start an R session and run:
+
+```coffee
+install.packages("~/rLandsat8/target/R/src/rLandsat8_x.y.z.tar.gz", repos=NULL, type="source")
+```
+
+> Note x.y.z is the development version number.
+
+Then load the library:
+
+```coffee
+library(rLandsat8)
+```
+
+## Getting Started 
+
+### Calculate the Normalized Difference Vegetation Index
+
+This example:
+
+* Reads a previously downloaded Landsat 8
+* Calculates the Normalized Difference Vegetation Index (NDVI) by converting the NIR and Red bands to TOA reflectances and applying the normalized difference: NDVI=(ρNIR −ρRed)/(ρNIR +ρRed)
+
+```coffee
+library(rLandsat8)
+
+setwd("~/Downloads")
+product  <- "LC82040322013219LGN00"
+l <- ReadLandsat8(product)
+
+ndvi <- ToNDVI(l)
+plot(ndvi)
+```
+
+## Questions, bugs, and suggestions
+
+Please file any bugs or questions as [issues](https://github.com/Terradue/rLandsat8/issues/new) or send in a pull request.
+
+
+
+ Not Found 400: Invalid request
+ Not Found # rLandsat8
+
+R interface to rLandsat8
+
+<!---[![DOI](https://zenodo.org/badge/3806/Terradue/rOpenSearch.png)](http://dx.doi.org/10.5281/zenodo.10642)-->
+
+### Documentation
+
+The rLandsat8 documentation is live at: http://terradue.github.io/rLandsat8
+
+The rLandsat8 documentation source is available at: https://github.com/Terradue/rLandsat8/tree/master/src/main/doc
+
+Inside R, use ?_<function name>_ to view the function's help page. Example:
+
+```coffee
+?ReadLandsat8
+```
+
+### Citing this package
+
+<!---To cite rOpenSearch use its [DOI](http://dx.doi.org/10.5281/zenodo.10642)-->
+
+### Installing a release
+
+The releases are available at: https://github.com/Terradue/rLandsat8/releases
+
+Releases can be installed using [devtools](http://www.rstudio.com/products/rpackages/devtools/)
+
+Start an R session and run:
+
+```coffee
+library(devtools)
+install_url("https://github.com/Terradue/rLandsat8/releases/download/v0.1-SNAPSHOT/rLandsat8_0.1.0.tar.gz")
+library(rLandsat8)
+```
+
+> Note the example above install the v0.1-SNAPSHOT release, adapt it to the current release
+
+### Building and installing the development version
+
+The rLandsat8 package is built using maven.
+
+From a terminal: 
+
+```bash
+cd
+git clone git@github.com:Terradue/rLandsat8.git
+cd rLandsat8
+mvn compile
+```
+
+That generates a compressed archive with the rOpenSearch package in:
+
+```
+~/rLandsat8/target/R/src/rLandsat8_x.y.z.tar.gz
+```
+To install the package, start an R session and run:
+
+```coffee
+install.packages("~/rLandsat8/target/R/src/rLandsat8_x.y.z.tar.gz", repos=NULL, type="source")
+```
+
+> Note x.y.z is the development version number.
+
+Then load the library:
+
+```coffee
+library(rLandsat8)
+```
+
+## Getting Started 
+
+### Calculate the Normalized Difference Vegetation Index
+
+This example:
+
+* Reads a previously downloaded Landsat 8
+* Calculates the Normalized Difference Vegetation Index (NDVI) by converting the NIR and Red bands to TOA reflectances and applying the normalized difference: NDVI=(ρNIR −ρRed)/(ρNIR +ρRed)
+
+```coffee
+library(rLandsat8)
+
+setwd("~/Downloads")
+product  <- "LC82040322013219LGN00"
+l <- ReadLandsat8(product)
+
+ndvi <- ToNDVI(l)
+plot(ndvi)
+```
+
+## Questions, bugs, and suggestions
+
+Please file any bugs or questions as [issues](https://github.com/Terradue/rLandsat8/issues/new) or send in a pull request.
+
+
+
+ 400: Invalid request
+ Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found # rLandsat8
+
+R interface to rLandsat8
+
+<!---[![DOI](https://zenodo.org/badge/3806/Terradue/rOpenSearch.png)](http://dx.doi.org/10.5281/zenodo.10642)-->
+
+### Documentation
+
+The rLandsat8 documentation is live at: http://terradue.github.io/rLandsat8
+
+The rLandsat8 documentation source is available at: https://github.com/Terradue/rLandsat8/tree/master/src/main/doc
+
+Inside R, use ?_<function name>_ to view the function's help page. Example:
+
+```coffee
+?ReadLandsat8
+```
+
+### Citing this package
+
+<!---To cite rOpenSearch use its [DOI](http://dx.doi.org/10.5281/zenodo.10642)-->
+
+### Installing a release
+
+The releases are available at: https://github.com/Terradue/rLandsat8/releases
+
+Releases can be installed using [devtools](http://www.rstudio.com/products/rpackages/devtools/)
+
+Start an R session and run:
+
+```coffee
+library(devtools)
+install_url("https://github.com/Terradue/rLandsat8/releases/download/v0.1-SNAPSHOT/rLandsat8_0.1.0.tar.gz")
+library(rLandsat8)
+```
+
+> Note the example above install the v0.1-SNAPSHOT release, adapt it to the current release
+
+### Building and installing the development version
+
+The rLandsat8 package is built using maven.
+
+From a terminal: 
+
+```bash
+cd
+git clone git@github.com:Terradue/rLandsat8.git
+cd rLandsat8
+mvn compile
+```
+
+That generates a compressed archive with the rOpenSearch package in:
+
+```
+~/rLandsat8/target/R/src/rLandsat8_x.y.z.tar.gz
+```
+To install the package, start an R session and run:
+
+```coffee
+install.packages("~/rLandsat8/target/R/src/rLandsat8_x.y.z.tar.gz", repos=NULL, type="source")
+```
+
+> Note x.y.z is the development version number.
+
+Then load the library:
+
+```coffee
+library(rLandsat8)
+```
+
+## Getting Started 
+
+### Calculate the Normalized Difference Vegetation Index
+
+This example:
+
+* Reads a previously downloaded Landsat 8
+* Calculates the Normalized Difference Vegetation Index (NDVI) by converting the NIR and Red bands to TOA reflectances and applying the normalized difference: NDVI=(ρNIR −ρRed)/(ρNIR +ρRed)
+
+```coffee
+library(rLandsat8)
+
+setwd("~/Downloads")
+product  <- "LC82040322013219LGN00"
+l <- ReadLandsat8(product)
+
+ndvi <- ToNDVI(l)
+plot(ndvi)
+```
+
+## Questions, bugs, and suggestions
+
+Please file any bugs or questions as [issues](https://github.com/Terradue/rLandsat8/issues/new) or send in a pull request.
+
+
+
+ Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found 400: Invalid request
