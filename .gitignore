@@ -2,3 +2,4 @@ target
 .Rhistory
 .rmdbuild
 cache
+.RData
