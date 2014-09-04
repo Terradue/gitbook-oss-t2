@@ -22,6 +22,8 @@ blah blah
 
 repo.frame <- GetRepos(github.organization)
 
+write.csv(file="/tmp/df.csv", x=repo.frame)
+
 #kable(head(repo.frame, 5), format = "html")
 
 plot(as.factor(repo.frame[ ,"ProgrammingLanguage"]))
