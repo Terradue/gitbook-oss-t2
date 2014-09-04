@@ -25,7 +25,7 @@ This guide gathers `r github.organization`'s Open Source projects.
 
 members <- GetPublicMembers(github.organization)
 
-members$Member <- paste0("<a href='", members$url, "'><img src='", members$avatar,"'>", members$login,"</a>")
+members$Members <- paste0("<a href='", members$url, "'><img src='", members$avatar,"' width='42' height='42'>", members$login,"</a>")
 
 kable(members[ , which(names(members) %in% c("Members"))], row.names = FALSE, format = "html")
 
