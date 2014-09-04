@@ -2,7 +2,7 @@
 
 github.organization <- "Terradue"
 
-source('src/main/R/global.R')
+source('../R/global.R')
 
 ```
 `r getwd()`
