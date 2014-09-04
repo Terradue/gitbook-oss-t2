@@ -3,4 +3,30 @@
 
 ## Welcome !
 
-`r 42+2`
+```{r results='asis', echo=FALSE}
+
+github.organization <- "Terradue"
+
+source('../R/global.R')
+
+```
+`r getwd()`
+
+```{r results='asis', echo=FALSE}
+# load packages
+suppressMessages(library("rjson"))
+suppressMessages(library("RCurl"))  
+
+# global chunk options
+ opts_chunk$set(cache=FALSE, autodep=TRUE)
+ ```
+
+blah blah
+
+```{r results='asis', echo=FALSE}
+
+repo.frame <- GetRepos(github.organization)
+
+kable(head(repo.frame, 5), format = "html")
+
+```
