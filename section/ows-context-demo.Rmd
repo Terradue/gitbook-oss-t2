@@ -4,7 +4,7 @@ github.organization <- 'Terradue'
 repo <- 'ows-context-demo'
 language <- 'JavaScript'
 creation <- '2014-07-29T12:01:04Z'
-update <- '2014-07-31T08:08:44Z'
+update <- '2014-09-04T10:50:21Z'
 stars <- '0'
 forks <- '2'
 ```
