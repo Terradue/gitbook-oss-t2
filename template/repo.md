@@ -1,14 +1,4 @@
-
-```r
-url.organization <- paste0("https://github.com/", github.organization)
-url.repo <- paste0(url.organization, "/", repo)
-
-cat(paste0("[", github.organization, "](", url.organization, ") / [", repo, "](", url.repo, ")")) 
-```
-
-```
-## [Terradue](https://github.com/Terradue) / [rOpenSearch](https://github.com/Terradue/rOpenSearch)
-```
+[Terradue](https://github.com/Terradue) / [rOpenSearch](https://github.com/Terradue/rOpenSearch)
 
 |    Language   | Created       | Last update | Stars      | Forks      | 
 |:-------------:|---------------|-------------|------------|------------|

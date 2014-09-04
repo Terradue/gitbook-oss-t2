@@ -8,7 +8,7 @@ update <- '2014-09-04T07:47:46Z'
 stars <- '2'
 forks <- '0'
 ```
-```{r}
+```{r results='asis', echo=FALSE}
 url.organization <- paste0("https://github.com/", github.organization)
 url.repo <- paste0(url.organization, "/", repo)
 
