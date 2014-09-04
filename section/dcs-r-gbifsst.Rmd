@@ -1,10 +1,12 @@
 ```{r results='asis', echo=FALSE}
 opts_chunk$set(cache=FALSE, autodep=TRUE)
+github.organization <- 'Terradue'
 repo <- 'dcs-r-gbifsst'
 language <- 'R'
 creation <- '2014-06-20T07:11:11Z'
 update <- '2014-09-04T07:40:19Z'
-github.organization <- 'Terradue'
+update <- '0'
+update <- '0'
 ```
 ```{r results='asis', echo=FALSE}
 
@@ -12,7 +14,9 @@ suppressMessages(library("RCurl"))
 
 cat(paste0("#### Language: ", language, "\n"))
 cat(paste0("#### Creation: ", creation, "\n"))
-cat(paste0("#### Lsat update: ", update, "\n"))
+cat(paste0("#### Last update: ", update, "\n"))
+cat(paste0("#### Stars: ", stars, "\n"))
+cat(paste0("#### Forks: ", forks, "\n"))
 
 cat(getURL(paste0("https://raw.githubusercontent.com/", github.organization, "/", repo, "/master/README.md")))
 ```

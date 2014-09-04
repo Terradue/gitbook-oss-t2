@@ -14,10 +14,10 @@ opts_chunk$set(cache=FALSE, autodep=TRUE)
 
 # Summary
 
-```{r results='asis', echo=TRUE}
+```{r results='asis', echo=FALSE}
 
 # get the data from GitHub
-repos.json<-fromJSON(getURLContent(paste0("https://api.github.com/orgs/", github.organization, "/repos?per_page=1000"), ssl.verifypeer = FALSE, useragent = "R"))
+repos.json <- fromJSON(getURLContent(paste0("https://api.github.com/orgs/", github.organization, "/repos?per_page=1000"), ssl.verifypeer = FALSE, useragent = "R"))
 
 project.name <- c()
 project.fullname <- c()
@@ -25,35 +25,37 @@ project.description <- c()
 project.lastupdate <- c()
 project.creationdate <- c()
 project.language <- c()
+project.forks <- c()
+project.stars <- c()
 project.chapter <- c()
 
 
 # create a dataframe with the repos
 
-for(i in 1:length(repos.json))
-  {
-  repo<-repos.json[[i]]
-  if(repo$private==FALSE)
-    {
+for(i in 1:length(repos.json)) {
+  repo <- repos.json[[i]]
+  
+  if (repo$private == FALSE) {
     gitBook.filepath <- paste("https://raw.githubusercontent.com", repo$full_name, "master/.gitbook",sep="/")
-    #print(gitBook.filepath)
-    # build the .gitbook file path for each repository
-    # to do: how to hide the error message?
-    result <- try(section.json <-fromJSON(getURLContent(gitBook.filepath, ssl.verifypeer = FALSE, useragent = "R")));
-    if(class(result) == "try-error") 
+    
+    result <- try(chapter.json <- fromJSON(getURLContent(gitBook.filepath, ssl.verifypeer = FALSE, useragent = "R")));
+    
+    if (class(result) == "try-error") 
       next;
     
-    
     # a repo can be part of more then one section
-    for(j in 1:length(section.json))
-      {
+    for (j in 1:length(chapter.json)) {
+      
       project.name <- append(project.name, repo$name)
       project.fullname <- append(project.fullname, repo$full_name)
       project.description <- append(project.description, repo$description)
       project.lastupdate <- append(project.lastupdate, repo$updated_at)
       project.creationdate  <- append(project.creationdate , repo$created_at)
-      project.language <- append(project.language, ifelse(length(repo$language)>0,repo$language,"")) 
-      project.chapter <- append(project.chapter, section.json[[j]])  
+      project.language <- append(project.language, ifelse(length(repo$language) > 0, repo$language, "")) 
+      project.forks <- append(project.forks , repo$forks_count)
+      project.stars <- append(project.stars , repo$stargazers_count)
+      project.chapter <- append(project.chapter, chapter.json[[j]])  
+     
       }
     }
   }
@@ -66,9 +68,9 @@ repo.frame <- data.frame(ProjectName=project.name,
   CreationTimeDate=project.creationdate, 
   Chapter=project.chapter,
   ProjectFullName=project.fullname,
-  stringsAsFactors = FALSE)
-
-head(repo.frame)
+  Forks=project.forks,
+  Stars=project.stars,
+  stringsAsFactors=FALSE)
 
 # build the page with reference link 
 template <- "template/repo.Rmd"
@@ -78,14 +80,15 @@ template <- "template/repo.Rmd"
 config.json <- fromJSON(file=".config.json")
 
 chapters <- c()
-for(i in 1:length(config.json))
+for (i in 1:length(config.json)) {
   chapters <- append(chapters, config.json[i]$chapter$title)
+}
 
 # create a folder for the sections of the book
 dir.create("section", showWarnings = FALSE)
 
-for(i in chapters)
-  {
+for (i in chapters) {
+  
   chapter.frame <- repo.frame[repo.frame$Chapter==i, ]
   chapter.frame <- chapter.frame[order(chapter.frame$ProjectName), ]
   
@@ -93,7 +96,7 @@ for(i in chapters)
   cat(paste0("* [", i, "](chapter/", gsub(" ", "-", i), ".md)\n"))
   
   # loop through the repos of the chapter
-  for(j in seq(nrow(chapter.frame))) {
+  for (j in seq(nrow(chapter.frame))) {
     
     repo <- chapter.frame[j, ]$ProjectName 
     
@@ -101,28 +104,32 @@ for(i in chapters)
     cat(paste0(" * [", repo, "](section/", repo, ".md)\n"))
     
     # get the repo information 
+    organization.declaration <- paste0("github.organization <- '", github.organization, "'")
     repo.declaration <- paste0("repo <- '", repo, "'")
     language.declaration <- paste0("language <- '", chapter.frame[j, ]$ProgrammingLanguage, "'")	
     creation.declaration <- paste0("creation <- '", chapter.frame[j, ]$CreationTimeDate, "'")  
     update.declaration <- paste0("update <- '", chapter.frame[j, ]$LastTimeUpdate, "'")  
-    organization.declaration <- paste0("github.organization <- '", github.organization, "'")
+    stars.declaration <- paste0("update <- '", chapter.frame[j, ]$Stars, "'")
+    forks.declaration <- paste0("update <- '", chapter.frame[j, ]$Forks, "'")
     
     # create the section Rmd file
     fileConn <- file(paste0("section/", repo, ".Rmd"))   
     
     content <- c("```{r results='asis', echo=FALSE}",
       "opts_chunk$set(cache=FALSE, autodep=TRUE)",
+      organization.declaration,
       repo.declaration,
       language.declaration,
       creation.declaration,
       update.declaration,
-      organization.declaration,
+      stars.declaration,
+      forks.declaration,
       "```",
       readChar(template, file.info(template)$size)) 
     
     writeLines(content, fileConn)
     close(fileConn)     
-    }
   }
+}
 ```
 

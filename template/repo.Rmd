@@ -4,7 +4,9 @@ suppressMessages(library("RCurl"))
 
 cat(paste0("#### Language: ", language, "\n"))
 cat(paste0("#### Creation: ", creation, "\n"))
-cat(paste0("#### Lsat update: ", update, "\n"))
+cat(paste0("#### Last update: ", update, "\n"))
+cat(paste0("#### Stars: ", stars, "\n"))
+cat(paste0("#### Forks: ", forks, "\n"))
 
 cat(getURL(paste0("https://raw.githubusercontent.com/", github.organization, "/", repo, "/master/README.md")))
 ```

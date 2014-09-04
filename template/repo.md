@@ -1,76 +1,74 @@
-
-```
-## Error: object 'language' not found
-```
-
-```
-## Error: object 'creation' not found
-```
+#### Language: R
+#### Creation: 2014-05-29T06:37:53Z
+#### Last update: 0
 
 ```
 ## Error: cannot coerce type 'closure' to vector of type 'character'
 ```
 
-Not Found # rLandsat8
+```
+## Error: object 'forks' not found
+```
 
-R interface to rLandsat8
+# rOpenSearch
 
-<!---[![DOI](https://zenodo.org/badge/3806/Terradue/rOpenSearch.png)](http://dx.doi.org/10.5281/zenodo.10642)-->
+[![DOI](https://zenodo.org/badge/3806/Terradue/rOpenSearch.png)](http://dx.doi.org/10.5281/zenodo.10642)
+
+R interface to OpenSearch
 
 ### Documentation
 
-The rLandsat8 documentation is live at: http://terradue.github.io/rLandsat8
+The rOpenSearch documentation is live at: http://terradue.github.io/rOpenSearch/
 
-The rLandsat8 documentation source is available at: https://github.com/Terradue/rLandsat8/tree/master/src/main/doc
+The rOpenSearch documentation source is available at: https://github.com/Terradue/rOpenSearch/tree/master/src/main/doc
 
 Inside R, use ?_<function name>_ to view the function's help page. Example:
 
 ```coffee
-?ReadLandsat8
+?GetOSQueryables
 ```
 
 ### Citing this package
 
-<!---To cite rOpenSearch use its [DOI](http://dx.doi.org/10.5281/zenodo.10642)-->
+To cite rOpenSearch use its [DOI](http://dx.doi.org/10.5281/zenodo.10642) 
 
 ### Installing a release
 
-The releases are available at: https://github.com/Terradue/rLandsat8/releases
+The releases are available at: https://github.com/Terradue/rOpenSearch/releases
 
 Releases can be installed using [devtools](http://www.rstudio.com/products/rpackages/devtools/)
 
 Start an R session and run:
 
 ```coffee
-library(devtools)
-install_url("https://github.com/Terradue/rLandsat8/releases/download/v0.1-SNAPSHOT/rLandsat8_0.1.0.tar.gz")
-library(rLandsat8)
+install_url("https://github.com/Terradue/rOpenSearch/releases/download/v0.1-SNAPSHOT/rOpenSearch_0.1.0.tar.gz")
+library(rOpenSearch)
 ```
 
 > Note the example above install the v0.1-SNAPSHOT release, adapt it to the current release
 
 ### Building and installing the development version
 
-The rLandsat8 package is built using maven.
+The rOpenSearch package is built using maven.
 
 From a terminal: 
 
 ```bash
 cd
-git clone git@github.com:Terradue/rLandsat8.git
-cd rLandsat8
+git clone git@github.com:Terradue/rOpenSearch.git
+cd rOpenSearch
 mvn compile
 ```
 
 That generates a compressed archive with the rOpenSearch package in:
 
 ```
-~/rLandsat8/target/R/src/rLandsat8_x.y.z.tar.gz
+~/rOpenSearch/target/R/src/rOpenSearch_x.y.z.tar.gz
 ```
 To install the package, start an R session and run:
 
 ```coffee
-install.packages("~/rLandsat8/target/R/src/rLandsat8_x.y.z.tar.gz", repos=NULL, type="source")
+install.packages("~/rOpenSearch/target/R/src/rOpenSearch_x.y.z.tar.gz", repos=NULL, type="source")
 ```
 
 > Note x.y.z is the development version number.
@@ -78,227 +76,175 @@ install.packages("~/rLandsat8/target/R/src/rLandsat8_x.y.z.tar.gz", repos=NULL, 
 Then load the library:
 
 ```coffee
-library(rLandsat8)
+library(rOpenSearch)
 ```
 
 ## Getting Started 
 
-### Calculate the Normalized Difference Vegetation Index
+### Get Envisat MERIS Earth Observation data best coverage for the white shark habitat analysis
 
 This example:
 
-* Reads a previously downloaded Landsat 8
-* Calculates the Normalized Difference Vegetation Index (NDVI) by converting the NIR and Red bands to TOA reflectances and applying the normalized difference: NDVI=(ρNIR −ρRed)/(ρNIR +ρRed)
+* Queries the [Global Biodiversity Information Facility](http://www.gbif.org/dF) using the [rOpenSci](http://ropensci.org/) [rgbif](http://ropensci.org/tutorials/rgbif_tutorial.html) package for the White Shark occurrences
+* Uses the [DBSCAN clustering algorithm](http://en.wikipedia.org/wiki/DBSCAN) to identify geospatial clusters 
+* Uses those clusters to query the [European Space Agency](http://www.esa.int/ESA) Envisat MERIS Full Resolution Level 1 OpenSearch catalogue
+* Selects the best covered cluster
 
 ```coffee
-library(rLandsat8)
+library("devtools")
+library("rgbif")
+library("fpc")
+library("httr")
+library("stringr")
+library("XML")
+library("RCurl")
+library("sp")
+library("rgeos") 
+library("maps") 
+library("RColorBrewer")
+library("rworldmap")
+library("rOpenSearch")
 
-setwd("~/Downloads")
-product  <- "LC82040322013219LGN00"
-l <- ReadLandsat8(product)
+install_github("ropensci/rgbif")
+library("rgbif")
 
-ndvi <- ToNDVI(l)
-plot(ndvi)
+# set the catalogue and retrieve the queryables
+osd.description <- 'http://grid-eo-catalog.esrin.esa.int/catalogue/gpod/MER_FRS_1P/description'
+response.type <- "application/rdf+xml"
+q <- GetOSQueryables(osd.description, response.type)
+q$value[q$type == "count"] <- 200
+  
+# get the occurrences from GBIF using rgbif
+key <- name_backbone(name='Carcharodon carcharias', kingdom='animalia')$speciesKey
+occ <- occ_search(taxonKey=key, limit=1000, return='data', hasCoordinate=TRUE)
+occ <- occ[complete.cases(occ),]
+# bind the lon/lat columns
+occ <- cbind(occ$decimalLongitude, occ$decimalLatitude)
+
+### dbscan clustering 
+eps <- 5
+minpts <- 20
+ds <- dbscan(occ, eps=eps, MinPts=minpts)
+
+
+dataset <- list()
+mbr <- list()
+sp <- list()
+
+# query the catalog using the geometry of the minimum bounding box for each cluster 
+for(i in 1:max(ds$cluster)) {
+  
+  print(paste("Dealing with cluster", i))
+  
+  # get the cluster i
+  cl <- (occ[ds$cluster %in% i,])
+  
+  # create the matrix with the cluster minimum bounding box
+  coords <- matrix(nrow=5, ncol=2, byrow=TRUE, data=c(
+    min(cl[,1]), min(cl[,2]), 
+    max(cl[,1]), min(cl[,2]), 
+    max(cl[,1]), max(cl[,2]), 
+    min(cl[,1]), max(cl[,2]), 
+    min(cl[,1]), min(cl[,2])))
+  
+  # get the cluster geospatial envelope
+  mbr[[i]] <- gEnvelope(SpatialPoints(coords))
+  
+  # update the queryables value with the WKT of the cluster envelope 
+  q$value[q$type == "geo:geometry"] <- writeWKT(gEnvelope(SpatialPoints(coords)))
+  
+  # query the catalogue
+  res <- Query(osd.description, response.type, q)
+  
+  # from the result, get the Datasets
+  dataset[[i]] <- xmlToDataFrame(nodes = getNodeSet(xmlParse(res), 
+    "//dclite4g:DataSet"), stringsAsFactors = FALSE)
+  
+  # create the SpatialPolygonDataFrame
+  # add the first element  
+  poly.sp <- SpatialPolygonsDataFrame(readWKT(data.frame(dataset[[i]]$spatial)[1,]), dataset[[i]][1,])
+  # bind the remaining elements
+  for (n in 2:nrow(dataset[[i]])) {
+    poly.sp <- rbind(poly.sp, SpatialPolygonsDataFrame(readWKT(data.frame(dataset[[i]]$spatial)[n,],id=n), dataset[[i]][n,]))  
+  } 
+  
+  # evaluate the coverage index between each MERIS product and the cluster area
+  for (n in 1:nrow(dataset[[i]])) {
+    poly.sp[n,"coverage_index"] <- gArea(gIntersection(mbr[[i]], poly.sp[n,])) / gArea(mbr[[i]]) 
+  }
+
+  # take the MERIS products with more than 80% coverage index
+  sp[[i]] <- poly.sp[poly.sp$coverage_index > 0.8,]
+}
+
+# what's the cluster with the best coverage?
+index <- which.max(lapply(sp, function(x) nrow(x)))
+
+# do a plot
+newmap <- getMap() #resolution = "low")
+plot(newmap)
+plot(sp[[index]], add=TRUE, col=brewer.pal( 8 , "RdBu")[index])
+plot(mbr[[index]], add=TRUE, col="blue")
+
+# list the MERIS file to download from the European Space Agency
+sp[[index]]$identifier
 ```
 
-## Questions, bugs, and suggestions
+This returns the image below:
 
-Please file any bugs or questions as [issues](https://github.com/Terradue/rLandsat8/issues/new) or send in a pull request.
+![alt tag](src/main/R/examples/MERIS_white_shark.png)
 
 
+### Query the European Space Agency [ERS-1/2 SAR and Envisat ASAR virtual archive](http://eo-virtual-archive4.esa.int/) 
 
- Not Found 400: Invalid request
- Not Found # rLandsat8
+###### Query the Envisat ASAR Image Mode source packets Level 0 (ASA_IM__0P) series
 
-R interface to rLandsat8
-
-<!---[![DOI](https://zenodo.org/badge/3806/Terradue/rOpenSearch.png)](http://dx.doi.org/10.5281/zenodo.10642)-->
-
-### Documentation
-
-The rLandsat8 documentation is live at: http://terradue.github.io/rLandsat8
-
-The rLandsat8 documentation source is available at: https://github.com/Terradue/rLandsat8/tree/master/src/main/doc
-
-Inside R, use ?_<function name>_ to view the function's help page. Example:
+Return the 100 first dataset spanning time interval 2010-01-01 to 2010-01-31
 
 ```coffee
-?ReadLandsat8
-```
-
-### Citing this package
-
-<!---To cite rOpenSearch use its [DOI](http://dx.doi.org/10.5281/zenodo.10642)-->
-
-### Installing a release
-
-The releases are available at: https://github.com/Terradue/rLandsat8/releases
-
-Releases can be installed using [devtools](http://www.rstudio.com/products/rpackages/devtools/)
-
-Start an R session and run:
-
-```coffee
+# load the libraries
 library(devtools)
-install_url("https://github.com/Terradue/rLandsat8/releases/download/v0.1-SNAPSHOT/rLandsat8_0.1.0.tar.gz")
-library(rLandsat8)
+library(rgdal)
+library(rgeos)
+
+install_github("rOpenSearch", username="Terradue", subdir="/src/main/R/rOpenSearch")
+library(rOpenSearch)
+
+# define the OpenSearch description URL
+osd.url <- "http://eo-virtual-archive4.esa.int/search/ASA_IM__0P/description"
+response.type <- "application/rdf+xml"
+
+# get the queryables dataframe from the OpenSearch description URL
+df.params <- GetOSQueryables(osd.url, response.type)
+
+# define the values for the queryables
+df.params$value[df.params$type == "count"] <- 30 
+df.params$value[df.params$type == "time:start"] <- "2010-01-01"
+df.params$value[df.params$type == "time:end"] <- "2010-01-31"
+
+# submit the query
+res <- Query(osd.url, response.type, df.params)
+
+# get the dataset
+dataset <- xmlToDataFrame(nodes = getNodeSet(xmlParse(res), 
+  "//dclite4g:DataSet"), stringsAsFactors = FALSE)
+
+# create a SpatialPolygonsDataFrame with the first element of res$dataset
+poly.sp <- SpatialPolygonsDataFrame(readWKT(data.frame(dataset$spatial)[1,]), dataset[1,])
+
+# iterate through the remaining dataset
+for (n in 2:nrow(dataset)) {
+  poly.sp <- rbind(poly.sp,
+    SpatialPolygonsDataFrame(readWKT(data.frame(dataset$spatial)[n,],id=n), dataset[n,]))
+}
+
+# write the geojson file
+writeOGR(poly.sp, 'example1.geojson','dataMap', driver='GeoJSON')
 ```
 
-> Note the example above install the v0.1-SNAPSHOT release, adapt it to the current release
-
-### Building and installing the development version
-
-The rLandsat8 package is built using maven.
-
-From a terminal: 
-
-```bash
-cd
-git clone git@github.com:Terradue/rLandsat8.git
-cd rLandsat8
-mvn compile
-```
-
-That generates a compressed archive with the rOpenSearch package in:
-
-```
-~/rLandsat8/target/R/src/rLandsat8_x.y.z.tar.gz
-```
-To install the package, start an R session and run:
-
-```coffee
-install.packages("~/rLandsat8/target/R/src/rLandsat8_x.y.z.tar.gz", repos=NULL, type="source")
-```
-
-> Note x.y.z is the development version number.
-
-Then load the library:
-
-```coffee
-library(rLandsat8)
-```
-
-## Getting Started 
-
-### Calculate the Normalized Difference Vegetation Index
-
-This example:
-
-* Reads a previously downloaded Landsat 8
-* Calculates the Normalized Difference Vegetation Index (NDVI) by converting the NIR and Red bands to TOA reflectances and applying the normalized difference: NDVI=(ρNIR −ρRed)/(ρNIR +ρRed)
-
-```coffee
-library(rLandsat8)
-
-setwd("~/Downloads")
-product  <- "LC82040322013219LGN00"
-l <- ReadLandsat8(product)
-
-ndvi <- ToNDVI(l)
-plot(ndvi)
-```
+The GeoJSON file can be see here:
+https://github.com/Terradue/rOpenSearch/blob/master/src/main/R/examples/example1.geojson
 
 ## Questions, bugs, and suggestions
 
-Please file any bugs or questions as [issues](https://github.com/Terradue/rLandsat8/issues/new) or send in a pull request.
-
-
-
- 400: Invalid request
- Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found # rLandsat8
-
-R interface to rLandsat8
-
-<!---[![DOI](https://zenodo.org/badge/3806/Terradue/rOpenSearch.png)](http://dx.doi.org/10.5281/zenodo.10642)-->
-
-### Documentation
-
-The rLandsat8 documentation is live at: http://terradue.github.io/rLandsat8
-
-The rLandsat8 documentation source is available at: https://github.com/Terradue/rLandsat8/tree/master/src/main/doc
-
-Inside R, use ?_<function name>_ to view the function's help page. Example:
-
-```coffee
-?ReadLandsat8
-```
-
-### Citing this package
-
-<!---To cite rOpenSearch use its [DOI](http://dx.doi.org/10.5281/zenodo.10642)-->
-
-### Installing a release
-
-The releases are available at: https://github.com/Terradue/rLandsat8/releases
-
-Releases can be installed using [devtools](http://www.rstudio.com/products/rpackages/devtools/)
-
-Start an R session and run:
-
-```coffee
-library(devtools)
-install_url("https://github.com/Terradue/rLandsat8/releases/download/v0.1-SNAPSHOT/rLandsat8_0.1.0.tar.gz")
-library(rLandsat8)
-```
-
-> Note the example above install the v0.1-SNAPSHOT release, adapt it to the current release
-
-### Building and installing the development version
-
-The rLandsat8 package is built using maven.
-
-From a terminal: 
-
-```bash
-cd
-git clone git@github.com:Terradue/rLandsat8.git
-cd rLandsat8
-mvn compile
-```
-
-That generates a compressed archive with the rOpenSearch package in:
-
-```
-~/rLandsat8/target/R/src/rLandsat8_x.y.z.tar.gz
-```
-To install the package, start an R session and run:
-
-```coffee
-install.packages("~/rLandsat8/target/R/src/rLandsat8_x.y.z.tar.gz", repos=NULL, type="source")
-```
-
-> Note x.y.z is the development version number.
-
-Then load the library:
-
-```coffee
-library(rLandsat8)
-```
-
-## Getting Started 
-
-### Calculate the Normalized Difference Vegetation Index
-
-This example:
-
-* Reads a previously downloaded Landsat 8
-* Calculates the Normalized Difference Vegetation Index (NDVI) by converting the NIR and Red bands to TOA reflectances and applying the normalized difference: NDVI=(ρNIR −ρRed)/(ρNIR +ρRed)
-
-```coffee
-library(rLandsat8)
-
-setwd("~/Downloads")
-product  <- "LC82040322013219LGN00"
-l <- ReadLandsat8(product)
-
-ndvi <- ToNDVI(l)
-plot(ndvi)
-```
-
-## Questions, bugs, and suggestions
-
-Please file any bugs or questions as [issues](https://github.com/Terradue/rLandsat8/issues/new) or send in a pull request.
-
-
-
- Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found Not Found 400: Invalid request
+Please file any bugs or questions as [issues](https://github.com/Terradue/rOpenSearch/issues/new) or send in a pull request.
