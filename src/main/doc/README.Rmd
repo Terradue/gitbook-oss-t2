@@ -1,0 +1,28 @@
+# Terradue's guide to its OpenSource projects 
+
+
+### Welcome !
+
+```{r results='asis', echo=FALSE}
+
+github.organization <- "Terradue"
+source('../R/global.R')
+
+# load packages
+suppressMessages(library("rjson"))
+suppressMessages(library("RCurl"))  
+
+# global chunk options
+ opts_chunk$set(cache=FALSE, autodep=TRUE)
+```
+
+blah blah
+
+```{r results='asis', echo=FALSE}
+
+repo.frame <- GetRepos(github.organization)
+
+#kable(head(repo.frame, 5), format = "html")
+
+plot(as.factor(repo.frame[ ,"ProgrammingLanguage"]))
+```
