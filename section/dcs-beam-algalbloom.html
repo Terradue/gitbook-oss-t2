@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="fabricebrito/gitbook-oss-t2" data-level="4.1" data-basepath=".." data-revision="1409811222387">
+    <div class="book" data-github="fabricebrito/gitbook-oss-t2" data-level="4.1" data-basepath=".." data-revision="1409815489794">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -391,73 +391,11 @@
                 
                     <section class="normal" id="section-gitbook_7">
                     
-                        <h1 id="language-shell">Language: Shell</h1>
-<h2 id="developer-cloud-service-meris-algal-bloom-detection-using-beam">Developer Cloud Service - MERIS Algal bloom detection using BEAM</h2>
-<p>This tutorial builds upon the on the work done in the context of the ESA Cat-1 project “Production of global MERIS MCI composite images for detection of plankton blooms and other events” submitted by Dr. Jim Gower. More context information is available from the <a href="https://github.com/Terradue/dcs-beam-algalbloom/wiki" target="_blank">tutorial wiki page</a>.</p>
-<p>Hereafter, we will guide you to implement a &quot;MERIS Algal bloom detection using BEAM&quot; application on Terradue&#39;s Cloud Platform, a set of Cloud services to develop, test and exploit scalable, distributed earth data processors. </p>
-<h3 id="getting-started">Getting Started</h3>
-<p>To run this application, you will need a Developer Cloud Sandbox that can be requested from <a href="http://www.terradue.com/partners" target="_blank">Terradue&#39;s Portal</a>, provided user registration approval. </p>
-<h3 id="installation">Installation</h3>
-<p>Log on the developer sandbox and run these commands in a shell:</p>
-<ul>
-<li>Install <strong>Java 7</strong></li>
-</ul>
-<pre><code class="lang-bash"><span class="hljs-built_in">sudo</span> yum install -y java-<span class="hljs-number">1.7</span>.<span class="hljs-number">0</span>-openjdk
-</code></pre>
-<ul>
-<li>Select Java 7</li>
-</ul>
-<pre><code class="lang-bash"><span class="hljs-built_in">sudo</span> /usr/sbin/alternatives --config java
-</code></pre>
-<p>This will show on the terminal window:</p>
-<pre><code>There are 3 programs which provide &#39;java&#39;.
-
-  Selection    Command
------------------------------------------------
- + 1           /usr/java/jdk1.6.0_35/jre/bin/java
-   2           /usr/lib/jvm/jre-1.5.0-gcj/bin/java
-*  3           /usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java
-
-Enter to keep the current selection[+], or type selection number:
-</code></pre><p>Select java 1.7 out of the menu options by typing the correct number (here it&#39;s <em>3</em>).</p>
-<ul>
-<li>Install R required packages</li>
-</ul>
-<p>Install R and associated packages with the platform rciop RPM:</p>
-<pre><code class="lang-bash"><span class="hljs-built_in">sudo</span> yum install rciop
-</code></pre>
-<p>Install ff package in an R console:</p>
-<pre><code class="lang-coffee">install.packages(&quot;ff&quot;)
-</code></pre>
-<ul>
-<li>Install this application</li>
-</ul>
-<pre><code class="lang-bash"><span class="hljs-built_in">cd</span>
-git clone git@github.com:Terradue/dcs-beam-algalbloom.git
-<span class="hljs-built_in">cd</span> dcs-beam-algalbloom
-mvn install
-</code></pre>
-<h3 id="submitting-the-workflow">Submitting the workflow</h3>
-<p>Run this command in a shell:</p>
-<pre><code class="lang-bash">ciop-simwf
-</code></pre>
-<p>Or invoke the Web Processing Service via the Sandbox dashboard providing a start/stop date in the format YYYY/MM/DD (e.g. 2012-04-01 and 2012-04-03).</p>
-<h3 id="community-and-documentation">Community and Documentation</h3>
-<p>To learn more and find information go to </p>
-<ul>
-<li><a href="http://docs.terradue.com/developer" target="_blank">Developer Cloud Sandbox</a> service </li>
-<li><a href="https://earth.esa.int/web/guest/missions/esa-operational-eo-missions/envisat/instruments/meris" target="_blank">Envisat MERIS</a></li>
-<li><a href="https://earth.esa.int/web/guest/software-tools" target="_blank">ESA BEAM</a></li>
-<li><a href="https://github.com/bcdev/beam" target="_blank">ESA BEAM repository</a></li>
-</ul>
-<h3 id="authors-alphabetically-">Authors (alphabetically)</h3>
-<ul>
-<li>Brito Fabrice</li>
-<li>Mathot Emmannuel</li>
-</ul>
-<h3 id="license">License</h3>
-<p>Copyright 2014 Terradue Srl</p>
-<p>Licensed under the Apache License, Version 2.0: <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+                        <p>i```{r results=&#39;asis&#39;, echo=FALSE}
+suppressMessages(library(&quot;RCurl&quot;))</p>
+<p>cat(paste0(&quot;#### Language: &quot;, language, &quot;\n&quot;))</p>
+<p>cat(getURL(paste0(&quot;<a href="https://raw.githubusercontent.com/Terradue/" target="_blank">https://raw.githubusercontent.com/Terradue/</a>&quot;, repo, &quot;/master/README.md&quot;)))
+```</p>
 
                     
                     </section>
