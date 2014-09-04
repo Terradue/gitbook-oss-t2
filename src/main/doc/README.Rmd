@@ -1,8 +1,3 @@
-# Terradue's guide to its OpenSource projects 
-
-
-### Welcome !
-
 ```{r results='asis', echo=FALSE}
 
 github.organization <- "Terradue"
@@ -14,15 +9,44 @@ suppressMessages(library("RCurl"))
 
 # global chunk options
  opts_chunk$set(cache=FALSE, autodep=TRUE)
+
+repo.frame <- GetRepos(github.organization)
 ```
+
+# Guide to `r github.organization` Open Source projects 
+
+##### `r format(Sys.Date(), format="%d %B %Y")`
+
+### Welcome !
 
 blah blah
 
+### A few facts
+
+#### Top Starred repositories
+
 ```{r results='asis', echo=FALSE}
 
-repo.frame <- GetRepos(github.organization)
+stars <- unique(repo.frame[ , which(names(repo.frame) %in% c("ProjectName","Stars"))])
 
-#kable(head(repo.frame, 5), format = "html")
+stars <- stars[stars$Stars>0.0, ]
 
-plot(as.factor(repo.frame[ ,"ProgrammingLanguage"]))
+kable(head(stars[order(-stars$Stars), ], 5), row.names = FALSE, format = "html")
+```
+
+#### Top Forked repositories
+
+```{r results='asis', echo=FALSE}
+
+forks <- unique(repo.frame[ , which(names(repo.frame) %in% c("ProjectName","Forks"))])
+
+forks <- forks[forks$Forks>0.0, ]
+
+kable(head(forks[order(-forks$Forks), ], 5), row.names = FALSE, format = "html")
+```
+
+#### Programming Languages
+
+```{r results='asis', echo=FALSE}
+pie(table(as.factor(repo.frame[ ,"ProgrammingLanguage"])))
 ```
