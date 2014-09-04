@@ -5,16 +5,20 @@ date: "August 1, 2014"
 output: html_document
 ---
 
-# Summary
+```{r results='asis', echo=FALSE}
+# load packages
+suppressMessages(library("rjson"))
+suppressMessages(library("RCurl"))  
+```
 
 ```{r}
 # global chunk options
 opts_chunk$set(cache=FALSE, autodep=TRUE)
 ```
 
+# Summary
+
 ```{r results='asis', echo=FALSE}
-suppressMessages(library("rjson"))
-suppressMessages(library("RCurl"))     
 
 section <- "section"
 
@@ -39,6 +43,7 @@ programmingLanguage <- c()
 projectFullName <- c()
 section <- c()
 # salvo i dati della lista relativa ai progetti
+
 for(i in 1:length(repos.json))
 {
      repo<-repos.json[[i]]
@@ -52,7 +57,6 @@ for(i in 1:length(repos.json))
                if(class(result) == "try-error") 
                     next;
           
-	  
           
           # a repo can be part of more then one section
           for(j in 1:length(section.json))
