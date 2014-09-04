@@ -25,7 +25,7 @@ This guide gathers `r github.organization`'s Open Source projects.
 
 ```{r results='asis', echo=FALSE}
 
-stars <- unique(repo.frame[ , which(names(repo.frame) %in% c("ProjectName","Stars"))])
+stars <- unique(repo.frame[ , which(names(repo.frame) %in% c("Project", "Stars"))])
 
 stars <- stars[stars$Stars>0.0, ]
 
@@ -36,7 +36,7 @@ kable(head(stars[order(-stars$Stars), ], 5), row.names = FALSE, format = "html")
 
 ```{r results='asis', echo=FALSE}
 
-forks <- unique(repo.frame[ , which(names(repo.frame) %in% c("ProjectName","Forks"))])
+forks <- unique(repo.frame[ , which(names(repo.frame) %in% c("Project", "Forks"))])
 
 forks <- forks[forks$Forks>0.0, ]
 
@@ -46,5 +46,5 @@ kable(head(forks[order(-forks$Forks), ], 5), row.names = FALSE, format = "html")
 #### Programming Languages
 
 ```{r results='asis', echo=FALSE}
-pie(table(as.factor(repo.frame[ ,"ProgrammingLanguage"])))
+pie(table(as.factor(repo.frame[ ,"Language"])))
 ```

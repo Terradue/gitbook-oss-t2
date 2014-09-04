@@ -2,7 +2,7 @@
 <table>
  <thead>
   <tr>
-   <th align="left"> ProjectName </th>
+   <th align="left"> Project </th>
    <th align="left"> Description </th>
   </tr>
  </thead>
@@ -20,7 +20,7 @@
 <table>
  <thead>
   <tr>
-   <th align="left"> ProjectName </th>
+   <th align="left"> Project </th>
    <th align="left"> Description </th>
   </tr>
  </thead>
