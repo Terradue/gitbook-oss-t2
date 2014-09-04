@@ -1,21 +1,49 @@
-[Terradue](https://github.com/Terradue) / [DotNetEarthObservation](https://github.com/Terradue/DotNetEarthObservation)
+[Terradue](https://github.com/Terradue) / [DotNetSyndication](https://github.com/Terradue/DotNetSyndication)
 
 |    Language   | Created       | Last update | Stars          | Forks          | 
 |:-------------:|:-------------:|:-----------:|:--------------:|:--------------:|
-| R  | 2014-05-29T06:37:53Z  | 2014-09-04T07:47:46Z  | [2](https://github.com/Terradue/DotNetEarthObservation/stargazers) | [0](https://github.com/Terradue/DotNetEarthObservation/network) |
+| R  | 2014-05-29T06:37:53Z  | 2014-09-04T07:47:46Z  | [2](https://github.com/Terradue/DotNetSyndication/stargazers) | [0](https://github.com/Terradue/DotNetSyndication/network) |
 
 
-# DotNetEarthObservation
+# Terradue.ServiceModel.Syndication - Atom And RSS Syndication library for .Net
 
-.Net C# library implementing the Earth Observation Metadata profile of Observations &amp;  Measurements
+This is a copy of the original System.ServiceModel.Syndication from mono project avaialable at https://github.com/mono/mono/tree/master/mcs/class/System.ServiceModel.Web/System.ServiceModel.Syndication
 
-Classes are directly generated from the XSD files from the OGC Earth Observation Metadata profile of Observations & Measurements (1.0)	 10-157r3 
+It has been slightly modified to generate a standalone library for using Syndication Model.
 
-see more at http://www.opengeospatial.org/standards/om
+## Supported Platforms
 
-## Curent implementation
+* .NET 4.0 (Desktop / Server)
+* Xamarin.iOS / Xamarin.Android / Xamarin.Mac
+* Mono 2.10+
 
-The current implementation includes:
-- EarthObservation classes as the base types. XML namespace: http://www.opengis.net/eop/2.0 [eop]
-- Sar classes as the classes to Sar dataset. XML namespace: http://www.opengis.net/sar/2.0 [sar]
-- Sentinel-1 classes as the classes specific to Sentinel-1 mission. XML namespace: http://www.opengis.net/sen1/2.0 [sen1]
+## Getting Started
+
+Terradue.ServiceModel.Syndication is available as NuGet package in releases.
+
+```
+Install-Package Terradue.ServiceModel.Syndication
+```
+
+## Build
+
+Terradue.ServiceModel.Syndication is a single assembly designed to be easily deployed anywhere. 
+
+To compile it yourself, you’ll need:
+
+* Visual Studio 2012 or later, or Xamarin Studio
+
+To clone it locally click the "Clone in Desktop" button above or run the 
+following git commands.
+
+```
+git clone git@github.com:Terradue/DotNetSyndication.git Terradue.ServiceModel.Syndication
+```
+
+## Copyright and License
+
+Originally licensed under the under the terms of the [MIT X11 license](https://github.com/Terradue/DotNetSyndication/blob/master/MIT.X11)
+
+Copyright (c) 2014 Terradue
+
+Licensed under the [GPL v3 License](https://github.com/Terradue/DotNetSyndication/blob/master/LICENSE)

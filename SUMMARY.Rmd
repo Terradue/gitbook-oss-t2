@@ -42,13 +42,17 @@ for (i in chapters) {
   chapter.frame <- repo.frame[repo.frame$Chapter==i, ]
   chapter.frame <- chapter.frame[order(chapter.frame$ProjectName), ]
   
+  chapter.file <- paste0("chapter/", gsub(" ", "-", i), ".Rmd")
+  
   # add the chapter entry in the ToC
   cat(paste0("* [", i, "](chapter/", gsub(" ", "-", i), ".md)\n"))
   
   # loop through the repos of the chapter
   for (j in seq(nrow(chapter.frame))) {
-    
+  
     repo <- chapter.frame[j, ]$ProjectName 
+  
+    write(repo, file=chapter.file, append=TRUE)
     
     # add the section entry in the ToC
     cat(paste0(" * [", repo, "](section/", repo, ".md)\n"))
