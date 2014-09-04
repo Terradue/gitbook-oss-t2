@@ -30,7 +30,7 @@ stars <- unique(repo.frame[ , which(names(repo.frame) %in% c("ProjectName","Star
 
 stars <- stars[stars$Stars>0.0, ]
 
-kable(head(stars[order(-stars$Stars), ], 5), format = "html")
+kable(head(stars[order(-stars$Stars), ], 5), row.names = NA, format = "html")
 ```
 
 #### Top Forked repositories
@@ -41,7 +41,7 @@ forks <- unique(repo.frame[ , which(names(repo.frame) %in% c("ProjectName","Fork
 
 forks <- forks[forks$Forks>0.0, ]
 
-kable(head(forks[order(-forks$Forks), ], 5), format = "html")
+kable(head(forks[order(-forks$Forks), ], 5), row.names = NA, format = "html")
 ```
 
 #### Programming Languages
