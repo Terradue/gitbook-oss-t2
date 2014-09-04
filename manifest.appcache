@@ -1,8 +1,22 @@
 CACHE MANIFEST
-# Revision 1409822990818
+# Revision 1409823138051
 
 CACHE:
 index.html
+chapter/DCS-Field-Guide.html
+chapter/ElasticCAS.html
+chapter/OWS-Context.html
+chapter/OpenNebula.html
+chapter/R-packages.html
+section/dcs-r-gbifsst.html
+section/DotNetEarthObservation.html
+section/dcs-beam-algalbloom.html
+section/dcs-nest-coregistration.html
+section/DotNet4One.html
+section/ows-context-demo.html
+section/ows-context4j.html
+section/rLandsat8.html
+section/rOpenSearch.html
 gitbook/app.js
 gitbook/fonts/fontawesome/FontAwesome.otf
 gitbook/fonts/fontawesome/fontawesome-webfont.eot
