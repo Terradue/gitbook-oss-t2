@@ -1,10 +1,9 @@
 CACHE MANIFEST
-# Revision 1409840739248
+# Revision 1409842823738
 
 CACHE:
 index.html
 chapter/DCS-Field-Guide.html
-chapter/ElasticCAS.html
 chapter/C-Sharp.html
 chapter/OWS-Context.html
 chapter/OpenNebula.html
