@@ -17,9 +17,7 @@ repo.frame <- GetRepos(github.organization)
 
 ##### `r format(Sys.Date(), format="%d %B %Y")`
 
-### Welcome !
-
-blah blah
+This guide gathers `r github.organization`'s Open Source projects.
 
 ### A few facts
 
