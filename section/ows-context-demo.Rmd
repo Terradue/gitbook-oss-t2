@@ -11,18 +11,19 @@ forks <- '2'
 ```{r results='asis', echo=FALSE}
 url.organization <- paste0("https://github.com/", github.organization)
 url.repo <- paste0(url.organization, "/", repo)
-url.fork <- paste(url.organization, repo, "fork", sep="/")
+url.forks <- paste(url.organization, repo, "network", sep="/")
 
-url.star <- paste(url.organization, repo, "stargazers", sep="/")
+url.stars <- paste(url.organization, repo, "stargazers", sep="/")
 
-link.star <- paste0("[", stars, "](", url.star, ")")
+link.stars <- paste0("[", stars, "](", url.stars, ")")
+link.forks <- paste0("[", forks, "](", url.forks, ")")
 
 cat(paste0("[", github.organization, "](", url.organization, ") / [", repo, "](", url.repo, ")")) 
 ```
 
-|    Language   | Created       | Last update | Stars         | Forks      | 
-|:-------------:|---------------|-------------|---------------|------------|
-| `r language`  | `r creation`  | `r update`  | `r link.star` | `r forks`  |
+|    Language   | Created       | Last update | Stars          | Forks          | 
+|:-------------:|:-------------:|:-----------:|:--------------:|:--------------:|
+| `r language`  | `r creation`  | `r update`  | `r link.stars` | `r link.forks` |
 
 
 ```{r results='asis', echo=FALSE}
