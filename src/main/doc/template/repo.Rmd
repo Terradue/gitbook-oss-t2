@@ -1,16 +1,20 @@
 ```{r results='asis', echo=FALSE}
+url.organization <- paste0("https://github.com/", github.organization)
+url.repo <- paste0(url.organization, "/", repo)
+url.forks <- paste(url.organization, repo, "network", sep="/")
 
-cat(paste0("#### Language: ", language, "\n"))
-cat(paste0("#### Creation: ", creation, "\n"))
-cat(paste0("#### Last update: ", update, "\n"))
-cat(paste0("#### Stars: ", stars, "\n"))
-cat(paste0("#### Forks: ", forks, "\n"))
+url.stars <- paste(url.organization, repo, "stargazers", sep="/")
 
+link.stars <- paste0("[", stars, "](", url.stars, ")")
+link.forks <- paste0("[", forks, "](", url.forks, ")")
+
+cat(paste0("[", github.organization, "](", url.organization, ") / [", repo, "](", url.repo, ")")) 
 ```
 
-|    Language   | Created       | Last update | Stars      | Forks      |
-|:-------------:|---------------|-------------|------------|------------|
-| `language`    | `creation`    | `update`    | `stars`    | `forks`    |
+|    Language   | Created       | Last update | Stars          | Forks          | 
+|:-------------:|:-------------:|:-----------:|:--------------:|:--------------:|
+| `r language`  | `r creation`  | `r update`  | `r link.stars` | `r link.forks` |
+
 
 ```{r results='asis', echo=FALSE}
 suppressMessages(library("RCurl"))
