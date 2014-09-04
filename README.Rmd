@@ -41,7 +41,7 @@ forks <- unique(repo.frame[ , which(names(repo.frame) %in% c("ProjectName","Fork
 
 forks <- forks[forks$Forks>0.0, ]
 
-kable(head(forks[order(-Forks$Forks), ], 5), format = "html")
+kable(head(forks[order(-forks$Forks), ], 5), format = "html")
 ```
 
 #### Programming Languages
