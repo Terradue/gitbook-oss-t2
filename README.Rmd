@@ -13,7 +13,7 @@ suppressMessages(library("RCurl"))
 repo.frame <- GetRepos(github.organization)
 ```
 
-# Terradue's guide to its OpenSource projects 
+# Guide to Terradue Open Source projects 
 
 ##### `r format(Sys.Date(), format="%d %B %Y")`
 
