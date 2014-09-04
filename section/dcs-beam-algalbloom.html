@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="fabricebrito/gitbook-oss-t2" data-level="4.1" data-basepath=".." data-revision="1409825582023">
+    <div class="book" data-github="fabricebrito/gitbook-oss-t2" data-level="4.1" data-basepath=".." data-revision="1409826046487">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -469,12 +469,13 @@
                 
                     <section class="normal" id="section-gitbook_9">
                     
-                        <h4 id="language-shell">Language: Shell</h4>
-<h4 id="creation-2014-06-19t12-32-36z">Creation: 2014-06-19T12:32:36Z</h4>
-<h4 id="last-update-2014-09-04t06-13-09z">Last update: 2014-09-04T06:13:09Z</h4>
-<h4 id="stars-1">Stars: 1</h4>
-<h4 id="forks-2">Forks: 2</h4>
-<table>
+                        <pre><code class="lang-r">url.organization &lt;- paste0(<span class="hljs-string">"https://github.com/"</span>, github.organization)
+url.repo &lt;- paste0(url.organization, <span class="hljs-string">"/"</span>, repo)
+
+cat(paste0(<span class="hljs-string">"["</span>, github.organization, <span class="hljs-string">"]("</span>, url.organization, <span class="hljs-string">") / ["</span>, repo, <span class="hljs-string">"]("</span>, url.repo, <span class="hljs-string">")"</span>))
+</code></pre>
+<pre><code>## [Terradue](https://github.com/Terradue) / [dcs-beam-algalbloom](https://github.com/Terradue/dcs-beam-algalbloom)
+</code></pre><table>
 <thead>
 <tr>
 <th style="text-align:center">Language</th>

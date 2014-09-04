@@ -8,19 +8,17 @@ update <- '2014-09-04T05:58:25Z'
 stars <- '1'
 forks <- '0'
 ```
-```{r results='asis', echo=FALSE}
+```{r}
+url.organization <- paste0("https://github.com/", github.organization)
+url.repo <- paste0(url.organization, "/", repo)
 
-cat(paste0("#### Language: ", language, "\n"))
-cat(paste0("#### Creation: ", creation, "\n"))
-cat(paste0("#### Last update: ", update, "\n"))
-cat(paste0("#### Stars: ", stars, "\n"))
-cat(paste0("#### Forks: ", forks, "\n"))
-
+cat(paste0("[", github.organization, "](", url.organization, ") / [", repo, "](", url.repo, ")")) 
 ```
 
-|    Language   | Created       | Last update | Stars      | Forks      |
+|    Language   | Created       | Last update | Stars      | Forks      | 
 |:-------------:|---------------|-------------|------------|------------|
 | `r language`  | `r creation`  | `r update`  | `r stars`  | `r forks`  |
+
 
 ```{r results='asis', echo=FALSE}
 suppressMessages(library("RCurl"))

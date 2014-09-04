@@ -1,12 +1,19 @@
-#### Language: R
-#### Creation: 2014-05-29T06:37:53Z
-#### Last update: 2014-09-04T07:47:46Z
-#### Stars: 2
-#### Forks: 0
 
-|    Language   | Created       | Last update | Stars      | Forks      |
+```r
+url.organization <- paste0("https://github.com/", github.organization)
+url.repo <- paste0(url.organization, "/", repo)
+
+cat(paste0("[", github.organization, "](", url.organization, ") / [", repo, "](", url.repo, ")")) 
+```
+
+```
+## [Terradue](https://github.com/Terradue) / [rOpenSearch](https://github.com/Terradue/rOpenSearch)
+```
+
+|    Language   | Created       | Last update | Stars      | Forks      | 
 |:-------------:|---------------|-------------|------------|------------|
 | R  | 2014-05-29T06:37:53Z  | 2014-09-04T07:47:46Z  | 2  | 0  |
+
 
 # rOpenSearch
 
