@@ -1,3 +1,5 @@
+suppressMessages(library("rjson"))
+suppressMessages(library("RCurl")) 
 
 function GetRepos(organization) {
 
