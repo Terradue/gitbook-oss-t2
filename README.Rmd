@@ -22,10 +22,9 @@ blah blah
 
 repo.frame <- GetRepos(github.organization)
 
-stars <- repo.frame[ , which(names(repo.frame) %in% c("ProjectName","Stars"))]
+stars <- unique(repo.frame[ , which(names(repo.frame) %in% c("ProjectName","Stars"))])
 
-kable(stars[order(-stars$Stars), ], format = "html")
-
+kable(head(stars[order(-stars$Stars), ], 5), format = "html")
 
 
 
