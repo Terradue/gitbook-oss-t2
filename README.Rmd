@@ -21,7 +21,7 @@ blah blah
 ```{r results='asis', echo=FALSE}
 
 repo.frame <- GetRepos(github.organization)
-colnames(repo.frame)
+colnames(repo.frame[ , -which(names(repo.frame) %in% c("ProjectName","Stars"))])
 
 repo.frame$Stars <- as.numeric(repo.frame$Stars)
 
