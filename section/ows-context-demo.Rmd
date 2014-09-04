@@ -1,0 +1,14 @@
+```{r results='asis', echo=FALSE}
+opts_chunk$set(cache=FALSE, autodep=TRUE)
+repo <- 'ows-context-demo'
+language <- 'JavaScript'
+```
+```{r results='asis', echo=FALSE}
+suppressMessages(library("RCurl"))
+
+cat(paste0("# Language: ", language, "\n"))
+
+
+cat(getURL(paste0("https://raw.githubusercontent.com/Terradue/", repo, "/master/README.md")))
+```
+
