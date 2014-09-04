@@ -26,7 +26,7 @@ repo.frame$Stars <- as.numeric(repo.frame$Stars)
 
 write.csv(file="/tmp/df.csv", x=repo.frame, row.names=FALSE)
 
-stars <- unique(repos[repos$Stars>0.0, ])
+stars <- unique(repos[repos$Stars>0.0, c("Stars") ])
 
 kable(stars[order(-stars$Stars), ], format = "html")
 
