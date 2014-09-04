@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>OWS Context | Terradue&#39;s guide to its OpenSource projects</title>
+        <title>ows-context4j | Terradue&#39;s guide to its OpenSource projects</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 0.5.6">
@@ -19,10 +19,10 @@
     <meta name="author" content="fabricebrito">
     
     
-    <link rel="next" href="../section/DotNet4One.html" />
+    <link rel="next" href="../chapter/ElasticCAS.html" />
     
     
-    <link rel="prev" href="../index.html" />
+    <link rel="prev" href="../section/ows-context-demo.html" />
     
 
         
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="fabricebrito/gitbook-oss-t2" data-level="1" data-basepath=".." data-revision="1409809324485">
+    <div class="book" data-github="fabricebrito/gitbook-oss-t2" data-level="1.3" data-basepath=".." data-revision="1409809324485">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -118,7 +118,7 @@
         
         
         <li>
-            <a href="https://github.com/fabricebrito/gitbook-oss-t2/edit/master/chapter/OWS-Context.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/fabricebrito/gitbook-oss-t2/edit/master/section/ows-context4j.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -304,7 +304,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 14.285714285714286%;min-width: 0%;"></div>
+        <div class="inner" style="width: 57.142857142857146%;min-width: 42.857142857142854%;"></div>
     </div>
     <div class="chapters">
     
@@ -312,11 +312,11 @@
     
         <a href="../chapter/OWS-Context.html" title="OWS Context" class="chapter done new-chapter" data-progress="1" style="left: 14.285714285714286%;"></a>
     
-        <a href="../section/DotNet4One.html" title="DotNet4One" class="chapter  " data-progress="3.1" style="left: 28.571428571428573%;"></a>
+        <a href="../section/DotNet4One.html" title="DotNet4One" class="chapter done " data-progress="3.1" style="left: 28.571428571428573%;"></a>
     
-        <a href="../section/ows-context-demo.html" title="ows-context-demo" class="chapter  " data-progress="1.2" style="left: 42.857142857142854%;"></a>
+        <a href="../section/ows-context-demo.html" title="ows-context-demo" class="chapter done " data-progress="1.2" style="left: 42.857142857142854%;"></a>
     
-        <a href="../section/ows-context4j.html" title="ows-context4j" class="chapter  " data-progress="1.3" style="left: 57.142857142857146%;"></a>
+        <a href="../section/ows-context4j.html" title="ows-context4j" class="chapter done " data-progress="1.3" style="left: 57.142857142857146%;"></a>
     
         <a href="../chapter/ElasticCAS.html" title="ElasticCAS" class="chapter  new-chapter" data-progress="2" style="left: 71.42857142857143%;"></a>
     
@@ -329,9 +329,32 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_3">
+                    <section class="normal" id="section-gitbook_8">
                     
-                        <h1 id="i-m-ows-context">I&#39;m OWS Context</h1>
+                        <h1 id="language-java">Language: Java</h1>
+<h2 id="java-library-for-ogc-ows-context">Java library for OGC OWS Context</h2>
+<h3 id="ows4j-library">ows4j library</h3>
+<p>The <strong>ows4j</strong> library provides the tools to manage OGC OWS Context documents.</p>
+<h3 id="ogc-ows-context">OGC OWS Context</h3>
+<p>The <a href="http://www.opengeospatial.org/standards/owc" target="_blank">OGC Web Services Context Document</a> (OWS Context) describes the use cases, requirements and conceptual model for the OWS Context encoding standard. </p>
+<p>The OGC Web Services Context Document allows a set of configured information resources (service set) to be passed between applications primarily as a collection of services and supports in-line content as well (e.g. <a href="http://www.opengeospatial.org/standards/gml" target="_blank">Geography Markup Language (GML)</a>). </p>
+<p>The goal is to support use cases such as the distribution of search results, the exchange of a set of resources such as OGC <a href="http://www.opengeospatial.org/standards/wfs" target="_blank">Web Feature Service (WFS)</a>, <a href="http://www.opengeospatial.org/standards/wms" target="_blank">Web Map Service (WMS)</a>, <a href="http://www.opengeospatial.org/standards/wmts" target="_blank">Web Map Tile Service (WMTS)</a>, <a href="http://www.opengeospatial.org/standards/wcs" target="_blank">Web Coverage Service (WCS)</a> and others in a ‘common operating picture’. Additionally OWS Context can deliver a set of configured processing services (<a href="http://www.opengeospatial.org/standards/wps" target="_blank">Web Processing Service (WPS)</a>) parameters to allow the processing to be reproduced on different nodes. </p>
+<p>The standard provides a core model, which is extended and encoded as defined in extensions to this standard. A ‘context document’ specifies a fully configured service set which can be exchanged (with a consistent interpretation) among clients supporting the standard. </p>
+<p><strong>Find out more about OGC OWS Context:</strong></p>
+<ul>
+<li><a href="https://portal.opengeospatial.org/files/?artifact_id=55182" target="_blank">OGC® OWS Context Conceptual Model</a></li>
+<li><a href="https://portal.opengeospatial.org/files/?artifact_id=55183" target="_blank">OGC® OWS Context Atom Encoding Standard</a></li>
+<li><a href="https://portal.opengeospatial.org/files/?artifact_id=57477" target="_blank">OGC® OWS-10 Rules for JSON and GeoJSON Adoption: Focus on OWS-Context</a></li>
+</ul>
+<p><strong>There&#39;s an OWS Context demonstration live at <a href="http://terradue.github.io/ows-context-demo" target="_blank">terradue.github.io/ows-context-demo/</a></strong></p>
+<h3 id="getting-started">Getting Started</h3>
+<p>The folder <a href="https://github.com/Terradue/ows-context4j/tree/master/src/test/java/com/terradue/owc/test" target="_blank">https://github.com/Terradue/ows-context4j/tree/master/src/test/java/com/terradue/owc/test</a> contains several tests that represent examples of the owc4j library.</p>
+<h3 id="limitations">Limitations</h3>
+<p>The library does not provide yet the full coverage of the OGC OWS Context specification. </p>
+<h3 id="questions-bugs-and-suggestions">Questions, bugs, and suggestions</h3>
+<p>Please file any bugs or questions as <a href="https://github.com/Terradue/ows-context4j/issues/new" target="_blank">issues</a> </p>
+<h3 id="want-to-contribute-">Want to contribute?</h3>
+<p>Fork the repository <a href="https://github.com/Terradue/ows-context4j/fork" target="_blank">here</a> and send us pull requests.</p>
 
                     
                     </section>
@@ -341,10 +364,10 @@
         </div>
 
         
-        <a href="../index.html" class="navigation navigation-prev " aria-label="Previous page: Introduction"><i class="fa fa-angle-left"></i></a>
+        <a href="../section/ows-context-demo.html" class="navigation navigation-prev " aria-label="Previous page: ows-context-demo"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../section/DotNet4One.html" class="navigation navigation-next " aria-label="Next page: DotNet4One"><i class="fa fa-angle-right"></i></a>
+        <a href="../chapter/ElasticCAS.html" class="navigation navigation-next " aria-label="Next page: ElasticCAS"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
