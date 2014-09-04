@@ -1,25 +1,20 @@
 # Terradue's guide to its OpenSource projects 
-#### Terradue
 
-## Welcome !
+
+### Welcome !
 
 ```{r results='asis', echo=FALSE}
 
 github.organization <- "Terradue"
-
 source('../R/global.R')
 
-```
-`r getwd()`
-
-```{r results='asis', echo=FALSE}
 # load packages
 suppressMessages(library("rjson"))
 suppressMessages(library("RCurl"))  
 
 # global chunk options
  opts_chunk$set(cache=FALSE, autodep=TRUE)
- ```
+```
 
 blah blah
 
