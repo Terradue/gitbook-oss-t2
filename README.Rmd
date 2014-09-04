@@ -26,6 +26,6 @@ repo.frame <- GetRepos(github.organization)
 
 plot(as.factor(repo.frame[ ,"ProgrammingLanguage"]))
 
-pie(as.factor(repo.frame[ ,"ProgrammingLanguage"]))
+pie(table(as.factor(repo.frame[ ,"ProgrammingLanguage"])))
 
 ```
