@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="fabricebrito/gitbook-oss-t2" data-level="2.1" data-basepath=".." data-revision="1409815489794">
+    <div class="book" data-github="fabricebrito/gitbook-oss-t2" data-level="2.1" data-basepath=".." data-revision="1409815556725">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -391,11 +391,18 @@
                 
                     <section class="normal" id="section-gitbook_6">
                     
-                        <p>i```{r results=&#39;asis&#39;, echo=FALSE}
-suppressMessages(library(&quot;RCurl&quot;))</p>
-<p>cat(paste0(&quot;#### Language: &quot;, language, &quot;\n&quot;))</p>
-<p>cat(getURL(paste0(&quot;<a href="https://raw.githubusercontent.com/Terradue/" target="_blank">https://raw.githubusercontent.com/Terradue/</a>&quot;, repo, &quot;/master/README.md&quot;)))
-```</p>
+                        <h4 id="language-c">Language: C</h4>
+<h1 id="dotnetearthobservation">DotNetEarthObservation</h1>
+<p>.Net C# library implementing the Earth Observation Metadata profile of Observations &amp;  Measurements</p>
+<p>Classes are directly generated from the XSD files from the OGC Earth Observation Metadata profile of Observations &amp; Measurements (1.0)     10-157r3 </p>
+<p>see more at <a href="http://www.opengeospatial.org/standards/om" target="_blank">http://www.opengeospatial.org/standards/om</a></p>
+<h2 id="curent-implementation">Curent implementation</h2>
+<p>The current implementation includes:</p>
+<ul>
+<li>EarthObservation classes as the base types. XML namespace: <a href="http://www.opengis.net/eop/2.0" target="_blank">http://www.opengis.net/eop/2.0</a> [eop]</li>
+<li>Sar classes as the classes to Sar dataset. XML namespace: <a href="http://www.opengis.net/sar/2.0" target="_blank">http://www.opengis.net/sar/2.0</a> [sar]</li>
+<li>Sentinel-1 classes as the classes specific to Sentinel-1 mission. XML namespace: <a href="http://www.opengis.net/sen1/2.0" target="_blank">http://www.opengis.net/sen1/2.0</a> [sen1]</li>
+</ul>
 
                     
                     </section>

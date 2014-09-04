@@ -1,4 +1,4 @@
-i```{r results='asis', echo=FALSE}
+```{r results='asis', echo=FALSE}
 suppressMessages(library("RCurl"))
 
 cat(paste0("#### Language: ", language, "\n"))

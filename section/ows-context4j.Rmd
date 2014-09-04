@@ -3,7 +3,7 @@ opts_chunk$set(cache=FALSE, autodep=TRUE)
 repo <- 'ows-context4j'
 language <- 'Java'
 ```
-i```{r results='asis', echo=FALSE}
+```{r results='asis', echo=FALSE}
 suppressMessages(library("RCurl"))
 
 cat(paste0("#### Language: ", language, "\n"))
