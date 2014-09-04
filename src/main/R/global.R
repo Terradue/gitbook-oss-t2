@@ -47,9 +47,9 @@ for(i in 1:length(repos.json)) {
   }
 
 
-repo.frame <- data.frame(ProjectName=project.name, 
+repo.frame <- data.frame(Project=project.name, 
   Description=project.description, 
-  ProgrammingLanguage=project.language,
+  Language=project.language,
   LastTimeUpdate=project.lastupdate,
   CreationTimeDate=project.creationdate, 
   Chapter=project.chapter,
@@ -61,3 +61,19 @@ repo.frame <- data.frame(ProjectName=project.name,
 return(repo.frame)
 
 }
+
+GetPublicMembers <- function(organization) {
+
+  # get the data from GitHub
+  members.json <- fromJSON(getURLContent(paste0("https://api.github.com/orgs/", organization, "/public_members?per_page=1000"),
+        ssl.verifypeer = FALSE, useragent = "R"))
+
+  tmp.df <- as.data.frame(do.call("rbind", members.json))
+ 
+  members.df <- as.data.frame(cbind(unlist(tmp.df$login), unlist(tmp.df$avatar_url), unlist(tmp.df$html_url)))
+  
+  colnames(members.df) <- c("login", "avatar", "url")
+
+  return(members.df)
+}
+

@@ -40,9 +40,11 @@ dir.create("section", showWarnings = FALSE)
 for (i in chapters) {
   
   chapter.frame <- repo.frame[repo.frame$Chapter==i, ]
-  chapter.frame <- chapter.frame[order(chapter.frame$ProjectName), ]
+  chapter.frame <- chapter.frame[order(chapter.frame$Project), ]
   
-  chapter.file <- paste0("chapter/", gsub(" ", "-", i), ".Rmd)
+  chapter.file <- paste0("chapter/", gsub(" ", "-", i), ".Rmd")
+  
+  write(kable(chapter.frame[ , which(names(chapter.frame) %in% c("Project", "Description"))], row.names = FALSE, format = "html"), file=chapter.file, append=TRUE)
   
   # add the chapter entry in the ToC
   cat(paste0("* [", i, "](chapter/", gsub(" ", "-", i), ".md)\n"))
@@ -50,9 +52,7 @@ for (i in chapters) {
   # loop through the repos of the chapter
   for (j in seq(nrow(chapter.frame))) {
   
-    repo <- chapter.frame[j, ]$ProjectName 
-  
-    write(repo, file=chapter.file, append=TRUE)
+    repo <- chapter.frame[j, ]$Project
     
     # add the section entry in the ToC
     cat(paste0(" * [", repo, "](section/", repo, ".md)\n"))
@@ -60,7 +60,7 @@ for (i in chapters) {
     # get the repo information 
     organization.declaration <- paste0("github.organization <- '", github.organization, "'")
     repo.declaration <- paste0("repo <- '", repo, "'")
-    language.declaration <- paste0("language <- '", chapter.frame[j, ]$ProgrammingLanguage, "'")	
+    language.declaration <- paste0("language <- '", chapter.frame[j, ]$Language, "'")	
     creation.declaration <- paste0("creation <- '", chapter.frame[j, ]$CreationTimeDate, "'")  
     update.declaration <- paste0("update <- '", chapter.frame[j, ]$LastTimeUpdate, "'")  
     stars.declaration <- paste0("stars <- '", chapter.frame[j, ]$Stars, "'")
