@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>dcs-nest-coregistration | Guide to Terradue Open Source projects</title>
+        <title>dcs-python-ndvi | Guide to Terradue Open Source projects</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 0.5.6">
@@ -19,10 +19,10 @@
     <meta name="author" content="fabricebrito">
     
     
-    <link rel="next" href="../section/dcs-python-ndvi.html" />
+    <link rel="next" href="../section/dcs-r-gbifsst.html" />
     
     
-    <link rel="prev" href="../section/dcs-beam-flh-java.html" />
+    <link rel="prev" href="../section/dcs-nest-coregistration.html" />
     
 
         
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="fabricebrito/gitbook-oss-t2" data-level="4.3" data-basepath=".." data-revision="1409840739247">
+    <div class="book" data-github="fabricebrito/gitbook-oss-t2" data-level="4.4" data-basepath=".." data-revision="1409840739247">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -118,7 +118,7 @@
         
         
         <li>
-            <a href="https://github.com/fabricebrito/gitbook-oss-t2/edit/master/section/dcs-nest-coregistration.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/fabricebrito/gitbook-oss-t2/edit/master/section/dcs-python-ndvi.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -674,7 +674,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 57.142857142857146%;min-width: 53.57142857142857%;"></div>
+        <div class="inner" style="width: 60.714285714285715%;min-width: 57.142857142857146%;"></div>
     </div>
     <div class="chapters">
     
@@ -712,7 +712,7 @@
     
         <a href="../section/dcs-nest-coregistration.html" title="dcs-nest-coregistration" class="chapter done " data-progress="4.3" style="left: 57.142857142857146%;"></a>
     
-        <a href="../section/dcs-python-ndvi.html" title="dcs-python-ndvi" class="chapter  " data-progress="4.4" style="left: 60.714285714285715%;"></a>
+        <a href="../section/dcs-python-ndvi.html" title="dcs-python-ndvi" class="chapter done " data-progress="4.4" style="left: 60.714285714285715%;"></a>
     
         <a href="../section/dcs-r-gbifsst.html" title="dcs-r-gbifsst" class="chapter  " data-progress="4.5" style="left: 64.28571428571429%;"></a>
     
@@ -741,9 +741,9 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_20">
+                    <section class="normal" id="section-gitbook_21">
                     
-                        <p><a href="https://github.com/Terradue" target="_blank">Terradue</a> / <a href="https://github.com/Terradue/dcs-nest-coregistration" target="_blank">dcs-nest-coregistration</a></p>
+                        <p><a href="https://github.com/Terradue" target="_blank">Terradue</a> / <a href="https://github.com/Terradue/dcs-python-ndvi" target="_blank">dcs-python-ndvi</a></p>
 <table>
 <thead>
 <tr>
@@ -756,68 +756,53 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">Shell</td>
-<td style="text-align:center">2014-07-01T06:41:00Z</td>
-<td style="text-align:center">2014-09-04T05:58:25Z</td>
-<td style="text-align:center"><a href="https://github.com/Terradue/dcs-nest-coregistration/stargazers" target="_blank">1</a></td>
-<td style="text-align:center"><a href="https://github.com/Terradue/dcs-nest-coregistration/network" target="_blank">0</a></td>
+<td style="text-align:center">Python</td>
+<td style="text-align:center">2014-06-17T11:08:49Z</td>
+<td style="text-align:center">2014-09-04T14:22:30Z</td>
+<td style="text-align:center"><a href="https://github.com/Terradue/dcs-python-ndvi/stargazers" target="_blank">0</a></td>
+<td style="text-align:center"><a href="https://github.com/Terradue/dcs-python-ndvi/network" target="_blank">0</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="developer-cloud-service-nest-coregistration">Developer Cloud Service NEST Coregistration</h2>
-<p>The Next ESA SAR Toolbox (NEST) is a free and open source toolbox suite for reading, processing, analysis and visualization of SAR data. The toolbox is developed by the European Space Agency (ESA) under the GNU GPL license. </p>
-<p>This application performs the coregistration of a SAR stack.</p>
+<h2 id="developer-cloud-service-landsat-ndvi-python-tutorial">Developer Cloud Service - Landsat NDVI Python tutorial</h2>
+<p>The Landsat NDVI Python tutorial uses the Developer Cloud Sandbox service to implement a Python package using GDAL to   calculate the <a href="http://en.wikipedia.org/wiki/Normalized_Difference_Vegetation_Index" target="_blank">NDVI</a> in <a href="http://en.wikipedia.org/wiki/Landsat_program" target="_blank">Landsat TM 5 and 7</a> data.</p>
+<p>This tutorial builds upon the <a href="http://www.landmap.ac.uk/index.php/Learning-Materials/Python-Scripting/9.1-Introduction" target="_blank">Python Scripting for Remote Sensing course</a> by <a href="http://www.landmap.ac.uk/" target="_blank">Landmap</a> and extends it to exploit a Cloud computing platform for its development, test and exploitation.</p>
 <h3 id="getting-started">Getting Started</h3>
-<p>To run this application you will need a Developer Cloud Sandbox, that can be either requested from the ESA <a href="http://eogrid.esrin.esa.int/cloudtoolbox/" target="_blank">Research &amp; Service Support Portal</a> for ESA G-POD related projects and ESA registered user accounts, or directly from <a href="http://www.terradue.com/partners" target="_blank">Terradue&#39;s Portal</a>, provided user registration approval. </p>
-<p>A Developer Cloud Sandbox provides Earth Sciences data access services, and helper tools for a user to implement, test and validate a scalable data processing application. It offers a dedicated virtual machine and a Cloud Computing environment.
-The virtual machine runs in two different lifecycle modes: Sandbox mode and Cluster mode. 
+<p>To run this application, you will need a Developer Cloud Sandbox that can be requested from Terradue&#39;s <a href="http://www.terradue.com/partners" target="_blank">Portal</a>, provided user registration approval. </p>
+<p>A Developer Cloud Sandbox provides Earth Science data access services, and assistance tools for a user to implement, test and validate his application.
+It runs in two different lifecycle modes: Sandbox mode and Cluster mode. 
 Used in Sandbox mode (single virtual machine), it supports cluster simulation and user assistance functions in building the distributed application.
-Used in Cluster mode (a set of master and slave nodes), it supports the deployment and execution of the application with the power of distributed computing for data processing over large datasets (leveraging the Hadoop Streaming MapReduce technology). </p>
+Used in Cluster mode (collections of virtual machines), it supports the deployment and execution of the application with the power of distributed computing processing over large datasets (leveraging the Hadoop Streaming MapReduce technology). </p>
 <h3 id="installation">Installation</h3>
 <p>Log on the developer sandbox and run these commands in a shell:</p>
 <ul>
-<li>Install <strong>Java 7</strong></li>
+<li>Install <strong>cioppy</strong></li>
 </ul>
-<pre><code class="lang-bash"><span class="hljs-built_in">sudo</span> yum install -y java-<span class="hljs-number">1.7</span>.<span class="hljs-number">0</span>-openjdk
+<pre><code class="lang-bash"><span class="hljs-built_in">sudo</span> yum install -y cioppy
 </code></pre>
-<ul>
-<li>Select Java 7</li>
-</ul>
-<pre><code class="lang-bash"><span class="hljs-built_in">sudo</span> /usr/sbin/alternatives --config java
-</code></pre>
-<p>This will show on the terminal window:</p>
-<pre><code>There are 3 programs which provide &#39;java&#39;.
-
-  Selection    Command
------------------------------------------------
- + 1           /usr/java/jdk1.6.0_35/jre/bin/java
-   2           /usr/lib/jvm/jre-1.5.0-gcj/bin/java
-*  3           /usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java
-
-Enter to keep the current selection[+], or type selection number:
-</code></pre><p>Select java 1.7 out of the menu options by typing the correct number (here it&#39;s <em>3</em>).</p>
 <ul>
 <li>Install this application</li>
 </ul>
 <pre><code class="lang-bash"><span class="hljs-built_in">cd</span>
-git clone git@github.com:Terradue/dcs-nest-coregistration.git
-<span class="hljs-built_in">cd</span> dcs-nest-coregistration
+git clone git@github.com:Terradue/dcs-python-ndvi.git
+<span class="hljs-built_in">cd</span> dcs-python-ndvi
 mvn install
 </code></pre>
 <h3 id="submitting-the-workflow">Submitting the workflow</h3>
 <p>Run this command in a shell:</p>
 <pre><code class="lang-bash">ciop-simwf
 </code></pre>
+<p>Or invoke the Web Processing Service via the Sandbox dashboard.</p>
 <h3 id="community-and-documentation">Community and Documentation</h3>
 <p>To learn more and find information go to </p>
 <ul>
 <li><a href="http://docs.terradue.com/developer" target="_blank">Developer Cloud Sandbox</a> service </li>
-<li><a href="https://earth.esa.int/web/nest/home" target="_blank">ESA NEST</a></li>
+<li><a href="http://landsat.usgs.gov/product_samples.php" target="_blank">USGS Landsat sample products</a> </li>
 </ul>
 <h3 id="authors-alphabetically-">Authors (alphabetically)</h3>
 <ul>
-<li>Brito Fabrice</li>
-<li>Mathot Emmannuel</li>
+<li>Emmannuel Mathot </li>
+<li>Fabrice Brito</li>
 </ul>
 <h3 id="license">License</h3>
 <p>Copyright 2014 Terradue Srl</p>
@@ -831,10 +816,10 @@ mvn install
         </div>
 
         
-        <a href="../section/dcs-beam-flh-java.html" class="navigation navigation-prev " aria-label="Previous page: dcs-beam-flh-java"><i class="fa fa-angle-left"></i></a>
+        <a href="../section/dcs-nest-coregistration.html" class="navigation navigation-prev " aria-label="Previous page: dcs-nest-coregistration"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../section/dcs-python-ndvi.html" class="navigation navigation-next " aria-label="Next page: dcs-python-ndvi"><i class="fa fa-angle-right"></i></a>
+        <a href="../section/dcs-r-gbifsst.html" class="navigation navigation-next " aria-label="Next page: dcs-r-gbifsst"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

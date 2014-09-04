@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1409840304256
+# Revision 1409840739248
 
 CACHE:
 index.html
@@ -9,11 +9,24 @@ chapter/C-Sharp.html
 chapter/OWS-Context.html
 chapter/OpenNebula.html
 chapter/R-packages.html
-section/dcs-r-gbifsst.html
 section/DotNetEarthObservation.html
+section/DotNetGeoJson.html
+section/DotNetOpenSearch.html
+section/DotNetOpenSearchKml.html
+section/DotNetOpenSearchTumblr.html
+section/DotNetSentinelSafe.html
+section/DotNetSyndication.html
+section/abiquo-cli.html
+section/abiquo4one.html
 section/dcs-beam-algalbloom.html
-section/dcs-nest-coregistration.html
 section/DotNet4One.html
+section/dcs-beam-flh-java.html
+section/dcs-nest-coregistration.html
+section/dcs-python-ndvi.html
+section/dcs-r-gbifsst.html
+section/dsi4one.html
+section/jCloudSigma.html
+section/jclouds4one.html
 section/ows-context-demo.html
 section/ows-context4j.html
 section/rLandsat8.html
