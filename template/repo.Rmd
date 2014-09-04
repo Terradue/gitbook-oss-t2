@@ -10,7 +10,7 @@ cat(paste0("#### Forks: ", forks, "\n"))
 
 |    Language   | Created       | Last update | Stars      | Forks      |
 |:-------------:|---------------|-------------|------------|------------|
-| `language`    | `creation`    | `update`    | `stars`    | `forks`    |
+| `r language`  | `r creation`  | `r update`  | `r stars`  | `r forks`  |
 
 ```{r results='asis', echo=FALSE}
 suppressMessages(library("RCurl"))
