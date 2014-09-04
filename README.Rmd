@@ -29,4 +29,5 @@ repo.frame <- GetRepos(github.organization)
 
 kable(head(repo.frame, 5), format = "html")
 
+plot(as.factor(repo.frame[ ,"ProgrammingLanguage"]))
 ```
