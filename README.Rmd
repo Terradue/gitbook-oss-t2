@@ -23,7 +23,13 @@ This guide gathers `r github.organization`'s Open Source projects.
 
 ```{r results='asis', echo=FALSE}
 
-kable(GetPublicMembers(github.organization), row.names = FALSE, format = "html")
+members <- GetPublicMembers(github.organization)
+
+class(members)
+
+head(members)
+
+kable(members, row.names = FALSE, format = "html")
 
 ```
 
