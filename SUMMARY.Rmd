@@ -14,7 +14,7 @@ opts_chunk$set(cache=FALSE, autodep=TRUE)
 
 # Summary
 
-```{r results='asis', echo=FALSE}
+```{r results='asis', echo=TRUE}
 
 # get the data from GitHub
 repos.json<-fromJSON(getURLContent(paste0("https://api.github.com/orgs/", github.organization, "/repos?per_page=1000"), ssl.verifypeer = FALSE, useragent = "R"))
@@ -67,6 +67,8 @@ repo.frame <- data.frame(ProjectName=project.name,
   Chapter=project.chapter,
   ProjectFullName=project.fullname,
   stringsAsFactors = FALSE)
+
+head(repo.frame)
 
 # build the page with reference link 
 template <- "template/repo.Rmd"
