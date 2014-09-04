@@ -44,7 +44,7 @@ for (i in chapters) {
   
   chapter.file <- paste0("chapter/", gsub(" ", "-", i), ".Rmd")
   
-  write(kable(chapter.frame[ , which(names(chapter.frame) %in% c("ProjectName", "Description", "ProgrammingLanguage"))], row.names = FALSE, format = "html"), file=chapter.file, append=TRUE)
+  write(kable(chapter.frame[ , which(names(chapter.frame) %in% c("ProjectName", "Description"))], row.names = FALSE, format = "html"), file=chapter.file, append=TRUE)
   
   # add the chapter entry in the ToC
   cat(paste0("* [", i, "](chapter/", gsub(" ", "-", i), ".md)\n"))

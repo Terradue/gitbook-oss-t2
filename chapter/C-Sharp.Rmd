@@ -101,3 +101,87 @@
   </tr>
 </tbody>
 </table>
+<table>
+ <thead>
+  <tr>
+   <th align="left"> ProjectName </th>
+   <th align="left"> Description </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td align="left"> DotNet4One </td>
+   <td align="left"> .Net Library to Access XML-RPC API of Opennebula </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNetEarthObservation </td>
+   <td align="left"> .Net C# library implementing the Earth Observation Metadata profile of Observations &  Measurements </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNetGeoJson </td>
+   <td align="left"> GeoJson library for .Net </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNetOpenSearch </td>
+   <td align="left"> OpenSearch library for .Net </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNetOpenSearchKml </td>
+   <td align="left"> KML OpenSearch extension library for .Net </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNetOpenSearchTumblr </td>
+   <td align="left"> Tumblr OpenSearch extension library for .Net </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNetSentinelSafe </td>
+   <td align="left"> .Net library and tools to manipulate Sentinel product and metadata in SAFE format </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNetSyndication </td>
+   <td align="left"> Web ServiceModel </td>
+  </tr>
+</tbody>
+</table>
+<table>
+ <thead>
+  <tr>
+   <th align="left"> ProjectName </th>
+   <th align="left"> Description </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td align="left"> DotNet4One </td>
+   <td align="left"> .Net Library to Access XML-RPC API of Opennebula </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNetEarthObservation </td>
+   <td align="left"> .Net C# library implementing the Earth Observation Metadata profile of Observations &  Measurements </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNetGeoJson </td>
+   <td align="left"> GeoJson library for .Net </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNetOpenSearch </td>
+   <td align="left"> OpenSearch library for .Net </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNetOpenSearchKml </td>
+   <td align="left"> KML OpenSearch extension library for .Net </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNetOpenSearchTumblr </td>
+   <td align="left"> Tumblr OpenSearch extension library for .Net </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNetSentinelSafe </td>
+   <td align="left"> .Net library and tools to manipulate Sentinel product and metadata in SAFE format </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNetSyndication </td>
+   <td align="left"> Web ServiceModel </td>
+  </tr>
+</tbody>
+</table>

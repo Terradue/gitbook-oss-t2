@@ -81,3 +81,71 @@
   </tr>
 </tbody>
 </table>
+<table>
+ <thead>
+  <tr>
+   <th align="left"> ProjectName </th>
+   <th align="left"> Description </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td align="left"> abiquo-cli </td>
+   <td align="left"> jclouds-labs-cli is a command line tool that allows you to interact with jclouds LABS part of the library </td>
+  </tr>
+  <tr>
+   <td align="left"> abiquo4one </td>
+   <td align="left"> Abiquo driver for Opennebula </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNet4One </td>
+   <td align="left"> .Net Library to Access XML-RPC API of Opennebula </td>
+  </tr>
+  <tr>
+   <td align="left"> dsi4one </td>
+   <td align="left"> T-Systems DSI driver for Opennebula </td>
+  </tr>
+  <tr>
+   <td align="left"> jclouds4one </td>
+   <td align="left"> jclouds driver for OpenNebula </td>
+  </tr>
+  <tr>
+   <td align="left"> jCloudSigma </td>
+   <td align="left"> ONE driver for CloudSigma </td>
+  </tr>
+</tbody>
+</table>
+<table>
+ <thead>
+  <tr>
+   <th align="left"> ProjectName </th>
+   <th align="left"> Description </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td align="left"> abiquo-cli </td>
+   <td align="left"> jclouds-labs-cli is a command line tool that allows you to interact with jclouds LABS part of the library </td>
+  </tr>
+  <tr>
+   <td align="left"> abiquo4one </td>
+   <td align="left"> Abiquo driver for Opennebula </td>
+  </tr>
+  <tr>
+   <td align="left"> DotNet4One </td>
+   <td align="left"> .Net Library to Access XML-RPC API of Opennebula </td>
+  </tr>
+  <tr>
+   <td align="left"> dsi4one </td>
+   <td align="left"> T-Systems DSI driver for Opennebula </td>
+  </tr>
+  <tr>
+   <td align="left"> jclouds4one </td>
+   <td align="left"> jclouds driver for OpenNebula </td>
+  </tr>
+  <tr>
+   <td align="left"> jCloudSigma </td>
+   <td align="left"> ONE driver for CloudSigma </td>
+  </tr>
+</tbody>
+</table>
