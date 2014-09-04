@@ -25,10 +25,6 @@ This guide gathers `r github.organization`'s Open Source projects.
 
 members <- GetPublicMembers(github.organization)
 
-class(members)
-
-head(members)
-
 kable(members, row.names = FALSE, format = "html")
 
 ```
