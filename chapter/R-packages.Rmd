@@ -4,48 +4,6 @@
   <tr>
    <th align="left"> ProjectName </th>
    <th align="left"> Description </th>
-   <th align="left"> ProgrammingLanguage </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td align="left"> rLandsat8 </td>
-   <td align="left"> R package to process USGS Landsat 8 data </td>
-   <td align="left"> R </td>
-  </tr>
-  <tr>
-   <td align="left"> rOpenSearch </td>
-   <td align="left"> R interface to OpenSearch </td>
-   <td align="left"> R </td>
-  </tr>
-</tbody>
-</table>
-<table>
- <thead>
-  <tr>
-   <th align="left"> ProjectName </th>
-   <th align="left"> Description </th>
-   <th align="left"> ProgrammingLanguage </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td align="left"> rLandsat8 </td>
-   <td align="left"> R package to process USGS Landsat 8 data </td>
-   <td align="left"> R </td>
-  </tr>
-  <tr>
-   <td align="left"> rOpenSearch </td>
-   <td align="left"> R interface to OpenSearch </td>
-   <td align="left"> R </td>
-  </tr>
-</tbody>
-</table>
-<table>
- <thead>
-  <tr>
-   <th align="left"> ProjectName </th>
-   <th align="left"> Description </th>
   </tr>
  </thead>
 <tbody>
