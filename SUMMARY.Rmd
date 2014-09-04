@@ -43,7 +43,7 @@ for(i in 1:length(repos.json)) {
     if (class(result) == "try-error") 
       next;
     
-    # a repo can be part of more then one section
+    # a repo can be part of more than one chapter
     for (j in 1:length(chapter.json)) {
       
       project.name <- append(project.name, repo$name)
