@@ -1,83 +1,81 @@
 # Language: Java
-[![Build Status](https://build.terradue.com/buildStatus/icon?job=DotNet4One)](https://build.terradue.com/job/DotNet4One/)
+## Developer Cloud Service NEST Coregistration
 
-# DotNet4One - .Net Library to Access XML-RPC API of Opennebula 
+The Next ESA SAR Toolbox (NEST) is a free and open source toolbox suite for reading, processing, analysis and visualization of SAR data. The toolbox is developed by the European Space Agency (ESA) under the GNU GPL license. 
 
-DotNet4One (Terradue.OpenNebula) is a library targeting .NET 4.0 and above providing an easy way to perform requests on any XML-RPC method exposed by an OpenNebula server.
+This application performs the coregistration of a SAR stack.
 
-XML-RPC API documentation: http://docs.opennebula.org/4.6/integration/system_interfaces/api.html
+### Getting Started 
 
-## Usage examples
+To run this application you will need a Developer Cloud Sandbox, that can be either requested from the ESA [Research & Service Support Portal](http://eogrid.esrin.esa.int/cloudtoolbox/) for ESA G-POD related projects and ESA registered user accounts, or directly from [Terradue's Portal](http://www.terradue.com/partners), provided user registration approval. 
 
-```c#
-// First create the client
-string proxyUrl = "<YOUR_SERVER_URL>";
-string adminUser = "<YOUR_ADMIN_USERNAME>"; //should be user with driver server_* to allow requests delegation
-string adminPwd = "<YOUR_ADMIN_PASSWORD>"; //SHA1 password
-var one = new OneClient(proxyUrl,adminUser,adminPwd);
+A Developer Cloud Sandbox provides Earth Sciences data access services, and helper tools for a user to implement, test and validate a scalable data processing application. It offers a dedicated virtual machine and a Cloud Computing environment.
+The virtual machine runs in two different lifecycle modes: Sandbox mode and Cluster mode. 
+Used in Sandbox mode (single virtual machine), it supports cluster simulation and user assistance functions in building the distributed application.
+Used in Cluster mode (a set of master and slave nodes), it supports the deployment and execution of the application with the power of distributed computing for data processing over large datasets (leveraging the Hadoop Streaming MapReduce technology). 
 
-// Do a request as admin
-USER_POOL pool = one.UserGetPoolInfo();
+### Installation 
 
-// Do a request on behalf of a normal user
-string targetUser = "<YOUR_TARGET_USERNAME>";
-one.StartDelegate(targetUser);
-int RemoteId = one.TemplateInstanciateVM(idTemplate, vmName, false, "");
-one.EndDelegate();
+Log on the developer sandbox and run these commands in a shell:
+
+* Install **Java 7**
+
+```bash
+sudo yum install -y java-1.7.0-openjdk
 ```
 
-## Supported Platforms
+* Select Java 7
 
-* .NET 4.0 (Desktop / Server)
-* Xamarin.iOS / Xamarin.Android / Xamarin.Mac
-* Mono 2.10+
-
-## Getting Started
-
-Terradue.OpenNebula is available as NuGet package in releases.
+```bash
+sudo /usr/sbin/alternatives --config java
+```
+This will show on the terminal window:
 
 ```
-Install-Package Terradue.OpenNebula
+There are 3 programs which provide 'java'.
+
+  Selection    Command
+-----------------------------------------------
+ + 1           /usr/java/jdk1.6.0_35/jre/bin/java
+   2           /usr/lib/jvm/jre-1.5.0-gcj/bin/java
+*  3           /usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java
+
+Enter to keep the current selection[+], or type selection number:
 ```
 
-## Build
+Select java 1.7 out of the menu options by typing the correct number (here it's *3*).
 
-Terradue.OpenNebula is a single assembly designed to be easily deployed anywhere. 
+* Install this application
 
-To compile it yourself, you’ll need:
-
-* Visual Studio 2012 or later, or Xamarin Studio
-
-To clone it locally click the "Clone in Desktop" button above or run the 
-following git commands.
-
-```
-git clone git@github.com:Terradue/Terradue.OpenNebula.git Terradue.OpenNebula
+```bash
+cd
+git clone git@github.com:Terradue/dcs-nest-coregistration.git
+cd dcs-nest-coregistration
+mvn install
 ```
 
-## TODO
+### Submitting the workflow
 
-* Following commands are missing
-  * one.acl.*
-  * one.vmpool.accounting
-  * one.document.*
-  * one.documentpool.info
-* Testing!
+Run this command in a shell:
 
-## Copyright and License
+```bash
+ciop-simwf
+```
 
-Copyright (c) 2014 Terradue
+### Community and Documentation
 
-Licensed under the [GPL v3 License](https://github.com/Terradue/DotNet4One/blob/master/LICENSE)
+To learn more and find information go to 
 
-## Thanks
+* [Developer Cloud Sandbox](http://docs.terradue.com/developer) service 
+* [ESA NEST](https://earth.esa.int/web/nest/home)
 
-This library is inspired from [OpenNebula-CSharp-Adapter](https://github.com/Neuralab/OpenNebula-CSharp-Adapter) and uses the excellent .NET framework [xml-rpc.net](http://xml-rpc.net).
+### Authors (alphabetically)
 
-## Questions, bugs, and suggestions
+* Brito Fabrice
+* Mathot Emmannuel
 
-Please file any bugs or questions as [issues](https://github.com/Terradue/DotNet4One/issues/new) 
+### License
 
-## Want to contribute?
+Copyright 2014 Terradue Srl
 
-Fork the repository [here](https://github.com/Terradue/DotNet4One/fork) and send us pull requests.
+Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

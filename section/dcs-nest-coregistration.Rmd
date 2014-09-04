@@ -1,7 +1,7 @@
 ```{r results='asis', echo=FALSE}
 opts_chunk$set(cache=FALSE, autodep=TRUE)
-repo <- ''
-language <- ''
+repo <- 'dcs-nest-coregistration'
+language <- 'Shell'
 ```
 ```{r results='asis', echo=FALSE}
 suppressMessages(library("RCurl"))
