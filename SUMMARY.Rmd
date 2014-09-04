@@ -2,7 +2,7 @@
 
 github.organization <- "Terradue"
 
-source('../R/global.R')
+source('src/main/R/global.R')
 
 ```
 
