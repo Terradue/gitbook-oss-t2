@@ -1,8 +1,3 @@
-
-```
-## Error: object 'fork' not found
-```
-
 [Terradue](https://github.com/Terradue) / [rOpenSearch](https://github.com/Terradue/rOpenSearch)
 
 |    Language   | Created       | Last update | Stars         | Forks      | 
