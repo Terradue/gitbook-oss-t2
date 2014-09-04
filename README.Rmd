@@ -27,7 +27,7 @@ members <- GetPublicMembers(github.organization)
 
 members$Members <- paste0("<a href='", members$url, "'><img src='", members$avatar,"' width='42' height='42'>", members$login,"</a>")
 
-kable(members[ , which(names(members) %in% c("Members"))], row.names = FALSE, format = "html")
+kable(members[ , which(names(members) %in% c("Members"))], align='l', row.names = FALSE, format = "html")
 
 ```
 
