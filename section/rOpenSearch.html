@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>dcs-beam-algalbloom | Terradue&#39;s guide to its OpenSource projects</title>
+        <title>rOpenSearch | Terradue&#39;s guide to its OpenSource projects</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 0.5.6">
@@ -19,10 +19,8 @@
     <meta name="author" content="fabricebrito">
     
     
-    <link rel="next" href="../section/dcs-nest-coregistration.html" />
     
-    
-    <link rel="prev" href="../chapter/DCS-Field-Guide.html" />
+    <link rel="prev" href="../section/rLandsat8.html" />
     
 
         
@@ -34,7 +32,7 @@
 
 
         
-    <div class="book" data-github="fabricebrito/gitbook-oss-t2" data-level="4.1" data-basepath=".." data-revision="1409816925156">
+    <div class="book" data-github="fabricebrito/gitbook-oss-t2" data-level="5.2" data-basepath=".." data-revision="1409816925156">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -118,7 +116,7 @@
         
         
         <li>
-            <a href="https://github.com/fabricebrito/gitbook-oss-t2/edit/master/section/dcs-beam-algalbloom.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/fabricebrito/gitbook-oss-t2/edit/master/section/rOpenSearch.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -428,7 +426,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 64.28571428571429%;min-width: 57.142857142857146%;"></div>
+        <div class="inner" style="width: 100%;min-width: 92.85714285714286%;"></div>
     </div>
     <div class="chapters">
     
@@ -452,90 +450,219 @@
     
         <a href="../section/dcs-beam-algalbloom.html" title="dcs-beam-algalbloom" class="chapter done " data-progress="4.1" style="left: 64.28571428571429%;"></a>
     
-        <a href="../section/dcs-nest-coregistration.html" title="dcs-nest-coregistration" class="chapter  " data-progress="4.2" style="left: 71.42857142857143%;"></a>
+        <a href="../section/dcs-nest-coregistration.html" title="dcs-nest-coregistration" class="chapter done " data-progress="4.2" style="left: 71.42857142857143%;"></a>
     
-        <a href="../section/dcs-r-gbifsst.html" title="dcs-r-gbifsst" class="chapter  " data-progress="4.3" style="left: 78.57142857142857%;"></a>
+        <a href="../section/dcs-r-gbifsst.html" title="dcs-r-gbifsst" class="chapter done " data-progress="4.3" style="left: 78.57142857142857%;"></a>
     
-        <a href="../chapter/R-packages.html" title="R packages" class="chapter  new-chapter" data-progress="5" style="left: 85.71428571428571%;"></a>
+        <a href="../chapter/R-packages.html" title="R packages" class="chapter done new-chapter" data-progress="5" style="left: 85.71428571428571%;"></a>
     
-        <a href="../section/rLandsat8.html" title="rLandsat8" class="chapter  " data-progress="5.1" style="left: 92.85714285714286%;"></a>
+        <a href="../section/rLandsat8.html" title="rLandsat8" class="chapter done " data-progress="5.1" style="left: 92.85714285714286%;"></a>
     
-        <a href="../section/rOpenSearch.html" title="rOpenSearch" class="chapter  " data-progress="5.2" style="left: 100%;"></a>
+        <a href="../section/rOpenSearch.html" title="rOpenSearch" class="chapter done " data-progress="5.2" style="left: 100%;"></a>
     
     </div>
 </div>
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_9">
+                    <section class="normal" id="section-gitbook_15">
                     
-                        <h4 id="language-shell">Language: Shell</h4>
-<h2 id="developer-cloud-service-meris-algal-bloom-detection-using-beam">Developer Cloud Service - MERIS Algal bloom detection using BEAM</h2>
-<p>This tutorial builds upon the on the work done in the context of the ESA Cat-1 project “Production of global MERIS MCI composite images for detection of plankton blooms and other events” submitted by Dr. Jim Gower. More context information is available from the <a href="https://github.com/Terradue/dcs-beam-algalbloom/wiki" target="_blank">tutorial wiki page</a>.</p>
-<p>Hereafter, we will guide you to implement a &quot;MERIS Algal bloom detection using BEAM&quot; application on Terradue&#39;s Cloud Platform, a set of Cloud services to develop, test and exploit scalable, distributed earth data processors. </p>
-<h3 id="getting-started">Getting Started</h3>
-<p>To run this application, you will need a Developer Cloud Sandbox that can be requested from <a href="http://www.terradue.com/partners" target="_blank">Terradue&#39;s Portal</a>, provided user registration approval. </p>
-<h3 id="installation">Installation</h3>
-<p>Log on the developer sandbox and run these commands in a shell:</p>
-<ul>
-<li>Install <strong>Java 7</strong></li>
-</ul>
-<pre><code class="lang-bash"><span class="hljs-built_in">sudo</span> yum install -y java-<span class="hljs-number">1.7</span>.<span class="hljs-number">0</span>-openjdk
+                        <h4 id="language-r">Language: R</h4>
+<h1 id="ropensearch">rOpenSearch</h1>
+<p><a href="http://dx.doi.org/10.5281/zenodo.10642" target="_blank"><img src="https://zenodo.org/badge/3806/Terradue/rOpenSearch.png" alt="DOI"></a></p>
+<p>R interface to OpenSearch</p>
+<h3 id="documentation">Documentation</h3>
+<p>The rOpenSearch documentation is live at: <a href="http://terradue.github.io/rOpenSearch/" target="_blank">http://terradue.github.io/rOpenSearch/</a></p>
+<p>The rOpenSearch documentation source is available at: <a href="https://github.com/Terradue/rOpenSearch/tree/master/src/main/doc" target="_blank">https://github.com/Terradue/rOpenSearch/tree/master/src/main/doc</a></p>
+<p>Inside R, use ?<em><function name></em> to view the function&#39;s help page. Example:</p>
+<pre><code class="lang-coffee">?GetOSQueryables
 </code></pre>
-<ul>
-<li>Select Java 7</li>
-</ul>
-<pre><code class="lang-bash"><span class="hljs-built_in">sudo</span> /usr/sbin/alternatives --config java
+<h3 id="citing-this-package">Citing this package</h3>
+<p>To cite rOpenSearch use its <a href="http://dx.doi.org/10.5281/zenodo.10642" target="_blank">DOI</a> </p>
+<h3 id="installing-a-release">Installing a release</h3>
+<p>The releases are available at: <a href="https://github.com/Terradue/rOpenSearch/releases" target="_blank">https://github.com/Terradue/rOpenSearch/releases</a></p>
+<p>Releases can be installed using <a href="http://www.rstudio.com/products/rpackages/devtools/" target="_blank">devtools</a></p>
+<p>Start an R session and run:</p>
+<pre><code class="lang-coffee">install_url(&quot;https://github.com/Terradue/rOpenSearch/releases/download/v0.1-SNAPSHOT/rOpenSearch_0.1.0.tar.gz&quot;)
+library(rOpenSearch)
 </code></pre>
-<p>This will show on the terminal window:</p>
-<pre><code>There are 3 programs which provide &#39;java&#39;.
-
-  Selection    Command
------------------------------------------------
- + 1           /usr/java/jdk1.6.0_35/jre/bin/java
-   2           /usr/lib/jvm/jre-1.5.0-gcj/bin/java
-*  3           /usr/lib/jvm/jre-1.7.0-openjdk.x86_64/bin/java
-
-Enter to keep the current selection[+], or type selection number:
-</code></pre><p>Select java 1.7 out of the menu options by typing the correct number (here it&#39;s <em>3</em>).</p>
-<ul>
-<li>Install R required packages</li>
-</ul>
-<p>Install R and associated packages with the platform rciop RPM:</p>
-<pre><code class="lang-bash"><span class="hljs-built_in">sudo</span> yum install rciop
-</code></pre>
-<p>Install ff package in an R console:</p>
-<pre><code class="lang-coffee">install.packages(&quot;ff&quot;)
-</code></pre>
-<ul>
-<li>Install this application</li>
-</ul>
+<blockquote>
+<p>Note the example above install the v0.1-SNAPSHOT release, adapt it to the current release</p>
+</blockquote>
+<h3 id="building-and-installing-the-development-version">Building and installing the development version</h3>
+<p>The rOpenSearch package is built using maven.</p>
+<p>From a terminal: </p>
 <pre><code class="lang-bash"><span class="hljs-built_in">cd</span>
-git clone git@github.com:Terradue/dcs-beam-algalbloom.git
-<span class="hljs-built_in">cd</span> dcs-beam-algalbloom
-mvn install
+git clone git@github.com:Terradue/rOpenSearch.git
+<span class="hljs-built_in">cd</span> rOpenSearch
+mvn compile
 </code></pre>
-<h3 id="submitting-the-workflow">Submitting the workflow</h3>
-<p>Run this command in a shell:</p>
-<pre><code class="lang-bash">ciop-simwf
+<p>That generates a compressed archive with the rOpenSearch package in:</p>
+<pre><code>~/rOpenSearch/target/R/src/rOpenSearch_x.y.z.tar.gz
+</code></pre><p>To install the package, start an R session and run:</p>
+<pre><code class="lang-coffee">install.packages(&quot;~/rOpenSearch/target/R/src/rOpenSearch_x.y.z.tar.gz&quot;, repos=NULL, type=&quot;source&quot;)
 </code></pre>
-<p>Or invoke the Web Processing Service via the Sandbox dashboard providing a start/stop date in the format YYYY/MM/DD (e.g. 2012-04-01 and 2012-04-03).</p>
-<h3 id="community-and-documentation">Community and Documentation</h3>
-<p>To learn more and find information go to </p>
+<blockquote>
+<p>Note x.y.z is the development version number.</p>
+</blockquote>
+<p>Then load the library:</p>
+<pre><code class="lang-coffee">library(rOpenSearch)
+</code></pre>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="get-envisat-meris-earth-observation-data-best-coverage-for-the-white-shark-habitat-analysis">Get Envisat MERIS Earth Observation data best coverage for the white shark habitat analysis</h3>
+<p>This example:</p>
 <ul>
-<li><a href="http://docs.terradue.com/developer" target="_blank">Developer Cloud Sandbox</a> service </li>
-<li><a href="https://earth.esa.int/web/guest/missions/esa-operational-eo-missions/envisat/instruments/meris" target="_blank">Envisat MERIS</a></li>
-<li><a href="https://earth.esa.int/web/guest/software-tools" target="_blank">ESA BEAM</a></li>
-<li><a href="https://github.com/bcdev/beam" target="_blank">ESA BEAM repository</a></li>
+<li>Queries the <a href="http://www.gbif.org/dF" target="_blank">Global Biodiversity Information Facility</a> using the <a href="http://ropensci.org/" target="_blank">rOpenSci</a> <a href="http://ropensci.org/tutorials/rgbif_tutorial.html" target="_blank">rgbif</a> package for the White Shark occurrences</li>
+<li>Uses the <a href="http://en.wikipedia.org/wiki/DBSCAN" target="_blank">DBSCAN clustering algorithm</a> to identify geospatial clusters </li>
+<li>Uses those clusters to query the <a href="http://www.esa.int/ESA" target="_blank">European Space Agency</a> Envisat MERIS Full Resolution Level 1 OpenSearch catalogue</li>
+<li>Selects the best covered cluster</li>
 </ul>
-<h3 id="authors-alphabetically-">Authors (alphabetically)</h3>
-<ul>
-<li>Brito Fabrice</li>
-<li>Mathot Emmannuel</li>
-</ul>
-<h3 id="license">License</h3>
-<p>Copyright 2014 Terradue Srl</p>
-<p>Licensed under the Apache License, Version 2.0: <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+<pre><code class="lang-coffee">library(&quot;devtools&quot;)
+library(&quot;rgbif&quot;)
+library(&quot;fpc&quot;)
+library(&quot;httr&quot;)
+library(&quot;stringr&quot;)
+library(&quot;XML&quot;)
+library(&quot;RCurl&quot;)
+library(&quot;sp&quot;)
+library(&quot;rgeos&quot;) 
+library(&quot;maps&quot;) 
+library(&quot;RColorBrewer&quot;)
+library(&quot;rworldmap&quot;)
+library(&quot;rOpenSearch&quot;)
+
+install_github(&quot;ropensci/rgbif&quot;)
+library(&quot;rgbif&quot;)
+
+# set the catalogue and retrieve the queryables
+osd.description &lt;- &#39;http://grid-eo-catalog.esrin.esa.int/catalogue/gpod/MER_FRS_1P/description&#39;
+response.type &lt;- &quot;application/rdf+xml&quot;
+q &lt;- GetOSQueryables(osd.description, response.type)
+q$value[q$type == &quot;count&quot;] &lt;- 200
+
+# get the occurrences from GBIF using rgbif
+key &lt;- name_backbone(name=&#39;Carcharodon carcharias&#39;, kingdom=&#39;animalia&#39;)$speciesKey
+occ &lt;- occ_search(taxonKey=key, limit=1000, return=&#39;data&#39;, hasCoordinate=TRUE)
+occ &lt;- occ[complete.cases(occ),]
+# bind the lon/lat columns
+occ &lt;- cbind(occ$decimalLongitude, occ$decimalLatitude)
+
+### dbscan clustering 
+eps &lt;- 5
+minpts &lt;- 20
+ds &lt;- dbscan(occ, eps=eps, MinPts=minpts)
+
+
+dataset &lt;- list()
+mbr &lt;- list()
+sp &lt;- list()
+
+# query the catalog using the geometry of the minimum bounding box for each cluster 
+for(i in 1:max(ds$cluster)) {
+
+  print(paste(&quot;Dealing with cluster&quot;, i))
+
+  # get the cluster i
+  cl &lt;- (occ[ds$cluster %in% i,])
+
+  # create the matrix with the cluster minimum bounding box
+  coords &lt;- matrix(nrow=5, ncol=2, byrow=TRUE, data=c(
+    min(cl[,1]), min(cl[,2]), 
+    max(cl[,1]), min(cl[,2]), 
+    max(cl[,1]), max(cl[,2]), 
+    min(cl[,1]), max(cl[,2]), 
+    min(cl[,1]), min(cl[,2])))
+
+  # get the cluster geospatial envelope
+  mbr[[i]] &lt;- gEnvelope(SpatialPoints(coords))
+
+  # update the queryables value with the WKT of the cluster envelope 
+  q$value[q$type == &quot;geo:geometry&quot;] &lt;- writeWKT(gEnvelope(SpatialPoints(coords)))
+
+  # query the catalogue
+  res &lt;- Query(osd.description, response.type, q)
+
+  # from the result, get the Datasets
+  dataset[[i]] &lt;- xmlToDataFrame(nodes = getNodeSet(xmlParse(res), 
+    &quot;//dclite4g:DataSet&quot;), stringsAsFactors = FALSE)
+
+  # create the SpatialPolygonDataFrame
+  # add the first element  
+  poly.sp &lt;- SpatialPolygonsDataFrame(readWKT(data.frame(dataset[[i]]$spatial)[1,]), dataset[[i]][1,])
+  # bind the remaining elements
+  for (n in 2:nrow(dataset[[i]])) {
+    poly.sp &lt;- rbind(poly.sp, SpatialPolygonsDataFrame(readWKT(data.frame(dataset[[i]]$spatial)[n,],id=n), dataset[[i]][n,]))  
+  } 
+
+  # evaluate the coverage index between each MERIS product and the cluster area
+  for (n in 1:nrow(dataset[[i]])) {
+    poly.sp[n,&quot;coverage_index&quot;] &lt;- gArea(gIntersection(mbr[[i]], poly.sp[n,])) / gArea(mbr[[i]]) 
+  }
+
+  # take the MERIS products with more than 80% coverage index
+  sp[[i]] &lt;- poly.sp[poly.sp$coverage_index &gt; 0.8,]
+}
+
+# what&#39;s the cluster with the best coverage?
+index &lt;- which.max(lapply(sp, function(x) nrow(x)))
+
+# do a plot
+newmap &lt;- getMap() #resolution = &quot;low&quot;)
+plot(newmap)
+plot(sp[[index]], add=TRUE, col=brewer.pal( 8 , &quot;RdBu&quot;)[index])
+plot(mbr[[index]], add=TRUE, col=&quot;blue&quot;)
+
+# list the MERIS file to download from the European Space Agency
+sp[[index]]$identifier
+</code></pre>
+<p>This returns the image below:</p>
+<p><img src="src/main/R/examples/MERIS_white_shark.png" alt="alt tag"></p>
+<h3 id="query-the-european-space-agency-ers-1-2-sar-and-envisat-asar-virtual-archive-http-eo-virtual-archive4-esa-int-">Query the European Space Agency <a href="http://eo-virtual-archive4.esa.int/" target="_blank">ERS-1/2 SAR and Envisat ASAR virtual archive</a></h3>
+<h6 id="query-the-envisat-asar-image-mode-source-packets-level-0-asa_im__0p-series">Query the Envisat ASAR Image Mode source packets Level 0 (ASA_IM__0P) series</h6>
+<p>Return the 100 first dataset spanning time interval 2010-01-01 to 2010-01-31</p>
+<pre><code class="lang-coffee"># load the libraries
+library(devtools)
+library(rgdal)
+library(rgeos)
+
+install_github(&quot;rOpenSearch&quot;, username=&quot;Terradue&quot;, subdir=&quot;/src/main/R/rOpenSearch&quot;)
+library(rOpenSearch)
+
+# define the OpenSearch description URL
+osd.url &lt;- &quot;http://eo-virtual-archive4.esa.int/search/ASA_IM__0P/description&quot;
+response.type &lt;- &quot;application/rdf+xml&quot;
+
+# get the queryables dataframe from the OpenSearch description URL
+df.params &lt;- GetOSQueryables(osd.url, response.type)
+
+# define the values for the queryables
+df.params$value[df.params$type == &quot;count&quot;] &lt;- 30 
+df.params$value[df.params$type == &quot;time:start&quot;] &lt;- &quot;2010-01-01&quot;
+df.params$value[df.params$type == &quot;time:end&quot;] &lt;- &quot;2010-01-31&quot;
+
+# submit the query
+res &lt;- Query(osd.url, response.type, df.params)
+
+# get the dataset
+dataset &lt;- xmlToDataFrame(nodes = getNodeSet(xmlParse(res), 
+  &quot;//dclite4g:DataSet&quot;), stringsAsFactors = FALSE)
+
+# create a SpatialPolygonsDataFrame with the first element of res$dataset
+poly.sp &lt;- SpatialPolygonsDataFrame(readWKT(data.frame(dataset$spatial)[1,]), dataset[1,])
+
+# iterate through the remaining dataset
+for (n in 2:nrow(dataset)) {
+  poly.sp &lt;- rbind(poly.sp,
+    SpatialPolygonsDataFrame(readWKT(data.frame(dataset$spatial)[n,],id=n), dataset[n,]))
+}
+
+# write the geojson file
+writeOGR(poly.sp, &#39;example1.geojson&#39;,&#39;dataMap&#39;, driver=&#39;GeoJSON&#39;)
+</code></pre>
+<p>The GeoJSON file can be see here:
+<a href="https://github.com/Terradue/rOpenSearch/blob/master/src/main/R/examples/example1.geojson" target="_blank">https://github.com/Terradue/rOpenSearch/blob/master/src/main/R/examples/example1.geojson</a></p>
+<h2 id="questions-bugs-and-suggestions">Questions, bugs, and suggestions</h2>
+<p>Please file any bugs or questions as <a href="https://github.com/Terradue/rOpenSearch/issues/new" target="_blank">issues</a> or send in a pull request.</p>
 
                     
                     </section>
@@ -545,10 +672,8 @@ mvn install
         </div>
 
         
-        <a href="../chapter/DCS-Field-Guide.html" class="navigation navigation-prev " aria-label="Previous page: DCS Field Guide"><i class="fa fa-angle-left"></i></a>
+        <a href="../section/rLandsat8.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: rLandsat8"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../section/dcs-nest-coregistration.html" class="navigation navigation-next " aria-label="Next page: dcs-nest-coregistration"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
