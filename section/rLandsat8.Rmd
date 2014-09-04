@@ -5,8 +5,8 @@ repo <- 'rLandsat8'
 language <- 'R'
 creation <- '2014-09-01T07:25:16Z'
 update <- '2014-09-02T12:23:40Z'
-update <- '0'
-update <- '0'
+stars <- '0'
+forks <- '0'
 ```
 ```{r results='asis', echo=FALSE}
 

@@ -5,8 +5,8 @@ repo <- 'ows-context4j'
 language <- 'Java'
 creation <- '2014-07-30T14:11:44Z'
 update <- '2014-07-30T14:18:48Z'
-update <- '0'
-update <- '0'
+stars <- '0'
+forks <- '0'
 ```
 ```{r results='asis', echo=FALSE}
 

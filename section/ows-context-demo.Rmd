@@ -5,8 +5,8 @@ repo <- 'ows-context-demo'
 language <- 'JavaScript'
 creation <- '2014-07-29T12:01:04Z'
 update <- '2014-07-31T08:08:44Z'
-update <- '0'
-update <- '2'
+stars <- '0'
+forks <- '2'
 ```
 ```{r results='asis', echo=FALSE}
 

@@ -5,8 +5,8 @@ repo <- 'dcs-r-gbifsst'
 language <- 'R'
 creation <- '2014-06-20T07:11:11Z'
 update <- '2014-09-04T07:40:19Z'
-update <- '0'
-update <- '0'
+stars <- '0'
+forks <- '0'
 ```
 ```{r results='asis', echo=FALSE}
 

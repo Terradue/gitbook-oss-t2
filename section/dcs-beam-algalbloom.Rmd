@@ -5,8 +5,8 @@ repo <- 'dcs-beam-algalbloom'
 language <- 'Shell'
 creation <- '2014-06-19T12:32:36Z'
 update <- '2014-09-04T06:13:09Z'
-update <- '1'
-update <- '2'
+stars <- '1'
+forks <- '2'
 ```
 ```{r results='asis', echo=FALSE}
 

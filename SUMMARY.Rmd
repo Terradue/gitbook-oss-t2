@@ -109,8 +109,8 @@ for (i in chapters) {
     language.declaration <- paste0("language <- '", chapter.frame[j, ]$ProgrammingLanguage, "'")	
     creation.declaration <- paste0("creation <- '", chapter.frame[j, ]$CreationTimeDate, "'")  
     update.declaration <- paste0("update <- '", chapter.frame[j, ]$LastTimeUpdate, "'")  
-    stars.declaration <- paste0("update <- '", chapter.frame[j, ]$Stars, "'")
-    forks.declaration <- paste0("update <- '", chapter.frame[j, ]$Forks, "'")
+    stars.declaration <- paste0("stars <- '", chapter.frame[j, ]$Stars, "'")
+    forks.declaration <- paste0("forks <- '", chapter.frame[j, ]$Forks, "'")
     
     # create the section Rmd file
     fileConn <- file(paste0("section/", repo, ".Rmd"))   

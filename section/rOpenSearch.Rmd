@@ -5,8 +5,8 @@ repo <- 'rOpenSearch'
 language <- 'R'
 creation <- '2014-05-29T06:37:53Z'
 update <- '2014-09-04T07:47:46Z'
-update <- '2'
-update <- '0'
+stars <- '2'
+forks <- '0'
 ```
 ```{r results='asis', echo=FALSE}
 

@@ -5,8 +5,8 @@ repo <- 'DotNetEarthObservation'
 language <- 'C#'
 creation <- '2014-05-28T15:22:30Z'
 update <- '2014-09-02T19:20:31Z'
-update <- '0'
-update <- '0'
+stars <- '0'
+forks <- '0'
 ```
 ```{r results='asis', echo=FALSE}
 

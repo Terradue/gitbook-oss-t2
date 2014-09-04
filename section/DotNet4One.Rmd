@@ -5,8 +5,8 @@ repo <- 'DotNet4One'
 language <- 'C#'
 creation <- '2014-07-01T14:32:22Z'
 update <- '2014-08-21T10:17:32Z'
-update <- '3'
-update <- '1'
+stars <- '3'
+forks <- '1'
 ```
 ```{r results='asis', echo=FALSE}
 
