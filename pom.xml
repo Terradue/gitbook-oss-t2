@@ -104,7 +104,7 @@
 							<executable>R</executable>
 							<arguments>
 								<argument>-e</argument>
-								<argument><![CDATA[library(Rgitbook); buildGitbook(source.dir='${project.build.directory}/R/src/doc', out.dir='${project.build.directory}/R/doc');]]></argument>
+								<argument><![CDATA[library(knitr); knit(input="target/R/src/doc/SUMMARY.Rmd", output="target/R/src/doc/SUMMARY.md");library(Rgitbook); buildGitbook(source.dir='${project.build.directory}/R/src/doc', out.dir='${project.build.directory}/R/doc');]]></argument>
 							</arguments>
 						</configuration>
 					</execution>
@@ -147,7 +147,7 @@
 			<plugin>
 				<groupId>com.github.github</groupId>
 				<artifactId>site-maven-plugin</artifactId>
-				<version>0.9</version>
+				<version>0.10-SNAPSHOT</version>
 				<configuration>
 					<message>Creating site for ${project.version}</message>
 				</configuration>
