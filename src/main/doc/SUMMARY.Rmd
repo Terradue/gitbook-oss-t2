@@ -1,10 +1,3 @@
----
-title: "T2gitbook"
-author: "Costanzo D'Angelis"
-date: "August 1, 2014"
-output: html_document
----
-
 ```{r results='asis', echo=FALSE}
 # load packages
 suppressMessages(library("rjson"))
@@ -19,10 +12,7 @@ opts_chunk$set(cache=FALSE, autodep=TRUE)
 ```{r results='asis', echo=FALSE}
 
 section <- "section"
-
 dir.create(section)
-
-#config.json <- fromJSON(getURLContent("https://raw.githubusercontent.com/fabricebrito/gitbook-oss-t2/master/src/main/doc/.config.json", ssl.verifypeer = FALSE, useragent = "R"))
 
 config.json <- fromJSON(file=".config.json")
 
