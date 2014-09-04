@@ -5,6 +5,7 @@ github.organization <- "Terradue"
 source('../R/global.R')
 
 ```
+`r getwd()`
 
 ```{r results='asis', echo=FALSE}
 # load packages

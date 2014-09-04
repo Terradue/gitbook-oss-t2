@@ -1,7 +1,7 @@
 suppressMessages(library("rjson"))
 suppressMessages(library("RCurl")) 
 
-function GetRepos(organization) {
+GetRepos <- function(organization) {
 
 # get the data from GitHub
 repos.json <- fromJSON(getURLContent(paste0("https://api.github.com/orgs/", organization, "/repos?per_page=1000"), ssl.verifypeer = FALSE, useragent = "R"))

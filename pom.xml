@@ -68,10 +68,10 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${project.build.directory}/R/src/doc</outputDirectory>
+              <outputDirectory>${project.build.directory}/main</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/src/main/doc</directory>
+                  <directory>${basedir}/src/main</directory>
                   <filtering>false</filtering>
                 </resource>
               </resources>
@@ -94,7 +94,7 @@
               <executable>R</executable>
               <arguments>
                 <argument>-e</argument>
-                <argument><![CDATA[library(knitr); knit(input="target/R/src/doc/SUMMARY.Rmd", output="target/R/src/doc/SUMMARY.md");library(Rgitbook); buildGitbook(source.dir='${project.build.directory}/R/src/doc', out.dir='${project.build.directory}/R/doc');]]></argument>
+                <argument><![CDATA[library(knitr); knit(input="target/main/doc/SUMMARY.Rmd", output="target/main/SUMMARY.md");library(Rgitbook); buildGitbook(source.dir='${project.build.directory}/main/doc', out.dir='${project.build.directory}/R/doc');]]></argument>
               </arguments>
             </configuration>
           </execution>
