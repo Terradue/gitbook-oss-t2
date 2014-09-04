@@ -24,8 +24,9 @@ repo.frame <- GetRepos(github.organization)
 
 stars <- unique(repo.frame[ , which(names(repo.frame) %in% c("ProjectName","Stars"))])
 
-kable(head(stars[order(-stars$Stars), ], 5), format = "html")
+stars <- stars[stars$Stars>0.0, ]
 
+kable(head(stars[order(-stars$Stars), ], 5), format = "html")
 
 
 #kable(head(repo.frame, 5), format = "html")
