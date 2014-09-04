@@ -15,6 +15,7 @@ repo.frame <- GetRepos(github.organization)
 
 # Terradue's guide to its OpenSource projects 
 
+##### `r format(Sys.Date(), format="%d %B %Y")`
 
 ### Welcome !
 
