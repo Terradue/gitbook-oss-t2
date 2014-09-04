@@ -2,7 +2,7 @@
 
 |    Language   | Created       | Last update | Stars         | Forks      | 
 |:-------------:|---------------|-------------|---------------|------------|
-| R  | 2014-05-29T06:37:53Z  | 2014-09-04T07:47:46Z  | 2 | 0  |
+| R  | 2014-05-29T06:37:53Z  | 2014-09-04T07:47:46Z  | [2](https://github.com/Terradue/rOpenSearch/stargazers) | 0  |
 
 
 # rOpenSearch
