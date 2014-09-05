@@ -35,21 +35,3 @@
   </tr>
 </tbody>
 </table>
-<table>
- <thead>
-  <tr>
-   <th align="left"> Project </th>
-   <th align="left"> Description </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td align="left"> rLandsat8 </td>
-   <td align="left"> R package to process USGS Landsat 8 data </td>
-  </tr>
-  <tr>
-   <td align="left"> rOpenSearch </td>
-   <td align="left"> R interface to OpenSearch </td>
-  </tr>
-</tbody>
-</table>
