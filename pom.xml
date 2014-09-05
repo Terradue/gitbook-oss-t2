@@ -8,9 +8,9 @@
   <description>GitHub Organization Gitbook</description>
   <version>0.2</version>
   <scm>
-    <connection>scm:git:git@github.com:fabricebrito/gitbook-oss-t2.git</connection>
-    <developerConnection>scm:git:git@github.com:fabricebrito/gitbook-oss-t2.git</developerConnection>
-    <url>https://github.com/fabricebrito/gitbook-oss-t2.git</url>
+    <connection>scm:git:git@github.com:Terradue/gitbook-oss-t2.git</connection>
+    <developerConnection>scm:git:git@github.com:Terradue/gitbook-oss-t2.git</developerConnection>
+    <url>https://github.com/Terradue/gitbook-oss-t2.git</url>
     <tag>HEAD</tag>
   </scm>
   <properties>
@@ -20,7 +20,7 @@
     <maven.deploy.skip>true</maven.deploy.skip>
     <github.global.server>github</github.global.server>
     <github.site.repositoryName>gitbook-oss-t2</github.site.repositoryName>
-    <github.site.repositoryOwner>fabricebrito</github.site.repositoryOwner>
+    <github.site.repositoryOwner>Terradue</github.site.repositoryOwner>
   </properties>
   <repositories>
     <repository>
