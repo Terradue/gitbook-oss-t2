@@ -35,3 +35,21 @@
   </tr>
 </tbody>
 </table>
+<table>
+ <thead>
+  <tr>
+   <th align="left"> Project </th>
+   <th align="left"> Description </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td align="left"> ows-context-demo </td>
+   <td align="left"> OGC OWS Context demonstration </td>
+  </tr>
+  <tr>
+   <td align="left"> ows-context4j </td>
+   <td align="left"> Java library for OGC OWS Context </td>
+  </tr>
+</tbody>
+</table>

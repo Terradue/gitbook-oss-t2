@@ -1,10 +1,10 @@
 ```{r results='asis', echo=FALSE}
 opts_chunk$set(cache=FALSE, autodep=TRUE)
 github.organization <- 'Terradue'
-repo <- 'ows-context4j'
-language <- 'Java'
-creation <- '2014-07-30T14:11:44Z'
-update <- '2014-09-05T06:42:32Z'
+repo <- 'abiquo4One'
+language <- 'Ruby'
+creation <- '2013-11-18T14:16:57Z'
+update <- '2014-09-05T08:14:53Z'
 stars <- '0'
 forks <- '0'
 ```
