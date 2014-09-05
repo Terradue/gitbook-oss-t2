@@ -18,7 +18,7 @@ url.stars <- paste(url.organization, repo, "stargazers", sep="/")
 link.stars <- paste0("[", stars, "](", url.stars, ")")
 link.forks <- paste0("[", forks, "](", url.forks, ")")
 
-cat(paste0("[", github.organization, "](", url.organization, ") / [", repo, "](", url.repo, ")")) 
+cat(paste0("### [", github.organization, "](", url.organization, ") / [", repo, "](", url.repo, ")")) 
 ```
 
 |    Language   | Created       | Last update | Stars          | Forks          | 
