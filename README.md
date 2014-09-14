@@ -1,13 +1,13 @@
 # gitbook-oss-t2
 
-This repo contains the RGitBook that automatically creates the Terradue Open Source guide 
+This repository contains the RGitBook functions for the automated generation of Terradue's Open Source guide.
 
-The GitBook is live at: live at http://terradue.github.io/gitbook-oss-t2
+The GitBook is live at: http://terradue.github.io/gitbook-oss-t2
 
-### Getting started
+### Getting started - Structuring the GitBook
 
-The first level structure, the chapters are defined in a JSON file named .config.json
-in the folder *src/main/doc*  ontaining the chapters:
+The GitBook first level structure is made of chapters defined by a JSON file named .config.json in the folder *src/main/doc* .
+The chapters are defined as follows:
 
 ```json
 {
@@ -26,14 +26,14 @@ in the folder *src/main/doc*  ontaining the chapters:
 }
 ```
 
-The key is the SUMMARY.Rmd file that is knitted to:
+The key is the SUMMARY.Rmd file, that is knitting the .config.json file and the GitHub API to:
 
-* Generate the chapters 
-* Generate the GitBook second level structure using the GitHub API.
+* Generate the GitBook first level chapters 
+* Generate the GitBook second level structure
 
-To be included in the GitBook, the organization repos must have a JSON file name .gitbook at the root of the repository with the chapter they belong to. 
+In order to be included in the GitBook, an organization's repo must have at it's root a JSON file named .gitbook, with the name(s) of the chapter(s) it belongs to. 
 
-Below an example of such file: 
+For example: 
 
 ```json
 {
@@ -41,7 +41,9 @@ Below an example of such file:
 }
 ```
 
-### Deploy the GitBook
+### Deploying the GitBook
+
+On the host server, simply use git clone and maven deploy.
 
 ```
 cd
