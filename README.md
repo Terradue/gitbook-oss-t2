@@ -43,7 +43,7 @@ For example:
 
 ### Deploying the GitBook
 
-On the host server, simply use git clone and maven deploy.
+Use git clone and maven:
 
 ```
 cd
